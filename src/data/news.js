@@ -5,7 +5,7 @@ export const news_posts = [
         excerpt: "Tahun ini, Desa Pusaka mencatatkan kenaikan hasil produksi padi sebesar 15% dibandingkan tahun lalu. Program irigasi terpadu dan pendampingan pupuk organik menjadi faktor kunci dalam keberhasilan panen raya musim ini yang dirayakan bersama seluruh warga.",
         cover_image_path: "https://lh3.googleusercontent.com/aida-public/AB6AXuCiLHPqr_W5WytIAMYo5MjR4TcKXp1gegbLgXM3-g5XsI1vcdCql1uLCmdPtkKGPz81WKafuXyI-M8TcnEVCeLNb-O0nGuEupYxc5_Q6_L2tyMxIKcDcvtbdKcCyPtDuRvTi1R2uy7s3EF5PtfXS1fKdZLmyiVKuPTVplG4C2qr6yCeT7dtQcRzyKgaVarjwE-aEldrIATMOPDUrLImk7VGsw7v1gCommcrAkkRzPaEfvIklMUXaQTalLwElYLB8H5OiKix6h0QBV4",
         published_at: "2024-05-15T00:00:00Z",
-        category: "Terbaru",
+        category: "Pertanian",
         color_class: "bg-secondary-container text-on-secondary-container",
         is_featured: true,
         author: { name: "Budi Santoso", role: "Kepala Urusan Pembangunan" },
