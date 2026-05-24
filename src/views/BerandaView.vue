@@ -1,6 +1,6 @@
 <template>
   <main>
-    <section class="relative h-[85vh] min-h-[600px] flex items-center overflow-hidden">
+    <section class="relative h-[85vh] min-h-[600px] flex items-center overflow-hidden pb-10">
       <div class="absolute inset-0 z-0">
         <div class="absolute inset-0 hero-gradient z-10"></div>
         <img :alt="'Desa ' + db.villages.name" class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-[10s]" :src="db.villages.hero_image_path">
@@ -29,38 +29,40 @@
         </div>
       </div>
     </section>
-    <section id="stats" class="py-xl bg-surface">
-      <div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-md">
-          <router-link to="/about" class="block p-lg bg-surface-container-lowest rounded-xl border border-outline-variant hover:shadow-md transition-shadow group">
-            <div class="w-12 h-12 bg-primary-fixed text-on-primary-fixed rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-              <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">groups</span>
-            </div>
-            <h3 class="font-headline-lg text-headline-lg text-primary">{{ formatNumber(db.village_statistics.population_total) }}+</h3>
-            <p class="font-label-md text-on-surface-variant group-hover:text-primary transition-colors">Penduduk</p>
-          </router-link>
-          <router-link to="/umkm" class="block p-lg bg-surface-container-lowest rounded-xl border border-outline-variant hover:shadow-md transition-shadow group">
-            <div class="w-12 h-12 bg-secondary-fixed text-on-secondary-fixed rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-              <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">storefront</span>
-            </div>
-            <h3 class="font-headline-lg text-headline-lg text-secondary">{{ db.aggregates.umkm_count }}+</h3>
-            <p class="font-label-md text-on-surface-variant group-hover:text-primary transition-colors">Produk UMKM</p>
-          </router-link>
-          <router-link to="/fasilitas" class="block p-lg bg-surface-container-lowest rounded-xl border border-outline-variant hover:shadow-md transition-shadow group">
-            <div class="w-12 h-12 bg-tertiary-fixed text-on-tertiary-fixed rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-              <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home_health</span>
-            </div>
-            <h3 class="font-headline-lg text-headline-lg text-tertiary">{{ db.aggregates.facilities_count }}+</h3>
-            <p class="font-label-md text-on-surface-variant group-hover:text-primary transition-colors">Fasilitas Umum</p>
-          </router-link>
-          <router-link to="/about" class="block p-lg bg-surface-container-lowest rounded-xl border border-outline-variant hover:shadow-md transition-shadow group">
-            <div class="w-12 h-12 bg-primary-fixed-dim text-on-primary-fixed-variant rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-              <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">map</span>
-            </div>
-            <h3 class="font-headline-lg text-headline-lg text-on-primary-fixed-variant">{{ db.village_statistics.area_ha }} Ha</h3>
-            <p class="font-label-md text-on-surface-variant group-hover:text-primary transition-colors">Wilayah Desa</p>
-          </router-link>
-        </div>
+
+    <section id="stats" class="relative z-30 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto -mt-16 md:-mt-24 mb-16">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-md">
+        <router-link to="/about" class="block p-lg bg-surface rounded-2xl shadow-lg border border-outline-variant hover:-translate-y-1 transition-all duration-300 group">
+          <div class="w-12 h-12 bg-primary-fixed text-on-primary-fixed rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+            <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">groups</span>
+          </div>
+          <h3 class="font-headline-lg text-headline-lg text-primary">{{ formatNumber(db.village_statistics.population_total) }}+</h3>
+          <p class="font-label-md text-on-surface-variant group-hover:text-primary transition-colors">Penduduk</p>
+        </router-link>
+
+        <router-link to="/umkm" class="block p-lg bg-surface rounded-2xl shadow-lg border border-outline-variant hover:-translate-y-1 transition-all duration-300 group">
+          <div class="w-12 h-12 bg-secondary-fixed text-on-secondary-fixed rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+            <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">storefront</span>
+          </div>
+          <h3 class="font-headline-lg text-headline-lg text-secondary">{{ db.aggregates.umkm_count }}+</h3>
+          <p class="font-label-md text-on-surface-variant group-hover:text-primary transition-colors">Produk UMKM</p>
+        </router-link>
+
+        <router-link to="/fasilitas" class="block p-lg bg-surface rounded-2xl shadow-lg border border-outline-variant hover:-translate-y-1 transition-all duration-300 group">
+          <div class="w-12 h-12 bg-tertiary-fixed text-on-tertiary-fixed rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+            <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home_health</span>
+          </div>
+          <h3 class="font-headline-lg text-headline-lg text-tertiary">{{ db.aggregates.facilities_count }}+</h3>
+          <p class="font-label-md text-on-surface-variant group-hover:text-primary transition-colors">Fasilitas Umum</p>
+        </router-link>
+
+        <router-link to="/about" class="block p-lg bg-surface rounded-2xl shadow-lg border border-outline-variant hover:-translate-y-1 transition-all duration-300 group">
+          <div class="w-12 h-12 bg-primary-fixed-dim text-on-primary-fixed-variant rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+            <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">map</span>
+          </div>
+          <h3 class="font-headline-lg text-headline-lg text-on-primary-fixed-variant">{{ db.village_statistics.area_ha }} Ha</h3>
+          <p class="font-label-md text-on-surface-variant group-hover:text-primary transition-colors">Wilayah Desa</p>
+        </router-link>
       </div>
     </section>
     <section class="py-xl" v-if="kepalaDesa">
@@ -107,29 +109,36 @@
           </router-link>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-md">
-          <div v-for="umkm in featuredUmkms" :key="umkm.id" class="bg-surface-container-lowest rounded-2xl overflow-hidden border border-outline-variant group hover:shadow-xl transition-all">
-            <router-link to="/umkm/detail" class="h-56 overflow-hidden relative block">
-              <div class="absolute top-4 left-4 z-20">
-                <span :class="['px-3 py-1 rounded-full font-label-sm', getCategoryStyle(umkm.umkm_category_id)]">
+          <article v-for="umkm in featuredUmkms" :key="umkm.id" class="bg-surface-container-lowest rounded-xl border border-outline-variant overflow-hidden hover:shadow-xl transition-all group flex flex-col">
+            <div class="relative h-56 overflow-hidden flex-shrink-0">
+              <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" :alt="umkm.name" :src="umkm.product_image_path"/>
+              <div class="absolute top-4 left-4">
+                <span :class="['px-3 py-1 rounded-full text-label-sm font-bold shadow-sm', getCategoryStyle(umkm.umkm_category_id)]">
                   {{ getCategoryName(umkm.umkm_category_id) }}
                 </span>
               </div>
-              <img :alt="umkm.name" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" :src="umkm.product_image_path">
-            </router-link>
-            <div class="p-md space-y-sm">
-              <router-link to="/umkm/detail"><h3 class="font-headline-sm text-headline-sm hover:text-primary transition-colors">{{ umkm.name }}</h3></router-link>
-              <p class="font-body-sm text-on-surface-variant line-clamp-2">{{ umkm.description }}</p>
-              <div class="flex gap-2 pt-2">
-                <a :href="'https://wa.me/' + umkm.whatsapp" target="_blank" class="flex-1 py-3 bg-secondary-container text-on-secondary-container rounded-xl font-label-sm flex items-center justify-center gap-2 hover:opacity-90 transition-opacity">
-                  <span class="material-symbols-outlined text-base">chat</span>
-                  WhatsApp
-                </a>
-                <a :href="umkm.maps_url" target="_blank" class="p-3 border border-outline-variant rounded-xl hover:bg-surface-container transition-colors">
-                  <span class="material-symbols-outlined text-on-surface-variant">location_on</span>
-                </a>
+            </div>
+            <div class="p-md flex flex-col flex-grow">
+              <h3 class="font-headline-sm text-headline-sm text-on-surface mb-xs group-hover:text-primary transition-colors">{{ umkm.name }}</h3>
+              <p class="font-body-sm text-body-sm text-on-surface-variant mb-md line-clamp-2">{{ umkm.description }}</p>
+              <div class="flex items-center justify-between mb-lg mt-auto">
+                <span class="text-primary font-bold font-body-md">{{ umkm.price }}</span>
+              </div>
+              <div class="flex flex-col gap-sm">
+                <router-link :to="`/umkm/${umkm.id}`" class="flex items-center justify-center gap-2 py-3 bg-surface-container-high text-on-surface border border-outline-variant rounded-lg font-label-md hover:bg-surface-container-highest transition-colors w-full">
+                  <span class="material-symbols-outlined text-[18px]">info</span> Lihat Detail
+                </router-link>
+                <div class="grid grid-cols-2 gap-sm">
+                  <a :href="`https://wa.me/${umkm.whatsapp}`" target="_blank" class="flex items-center justify-center gap-2 py-3 bg-[#25D366] text-white rounded-lg font-label-md hover:opacity-90">
+                    <span class="material-symbols-outlined text-[18px]">chat</span> WhatsApp
+                  </a>
+                  <a :href="umkm.maps_url" target="_blank" class="flex items-center justify-center gap-2 py-3 border border-outline text-on-surface-variant rounded-lg font-label-md hover:bg-surface-container-low transition-colors">
+                    <span class="material-symbols-outlined text-[18px]">location_on</span> Lokasi
+                  </a>
+                </div>
               </div>
             </div>
-          </div>
+          </article>
         </div>
       </div>
     </section>
@@ -140,14 +149,31 @@
           <p class="font-body-md text-on-surface-variant mt-2">Update kegiatan, kebijakan, dan prestasi terkini dari masyarakat {{ db.villages.name }}.</p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-md">
-          <router-link to="/berita/detail" v-for="news in latestNews" :key="news.id" class="group cursor-pointer block">
-            <div class="aspect-video rounded-2xl overflow-hidden mb-sm">
-              <img :alt="news.title" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" :src="news.cover_image_path">
+          <article v-for="news in latestNews" :key="news.id" class="flex flex-col bg-white border border-outline-variant rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all group">
+            <router-link :to="`/berita/${news.id}`" class="relative h-48 overflow-hidden block cursor-pointer">
+              <img :alt="news.title" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" :src="news.cover_image_path"/>
+              <div class="absolute top-3 left-3">
+                <span :class="['px-3 py-1 rounded-full font-label-sm text-label-sm', news.color_class || 'bg-primary text-on-primary']">
+                  {{ news.category || 'Berita' }}
+                </span>
+              </div>
+            </router-link>
+            <div class="p-md flex flex-col flex-grow">
+              <span class="font-label-sm text-label-sm text-outline mb-2">{{ formatDate(news.published_at) }}</span>
+              <router-link :to="`/berita/${news.id}`">
+                <h3 class="font-headline-sm text-headline-sm text-on-background mb-3 group-hover:text-primary transition-colors line-clamp-2">
+                  {{ news.title }}
+                </h3>
+              </router-link>
+              <p class="font-body-sm text-body-sm text-on-surface-variant mb-4 line-clamp-2">
+                {{ news.excerpt }}
+              </p>
+              <router-link :to="`/berita/${news.id}`" class="mt-auto flex items-center justify-between w-full font-label-md text-label-md text-primary font-bold group-hover:gap-2 transition-all">
+                Baca Selengkapnya
+                <span class="material-symbols-outlined">chevron_right</span>
+              </router-link>
             </div>
-            <time class="font-label-sm text-primary">{{ formatDate(news.published_at) }}</time>
-            <h3 class="font-headline-sm text-headline-sm group-hover:text-primary transition-colors mt-1">{{ news.title }}</h3>
-            <p class="font-body-sm text-on-surface-variant mt-2 line-clamp-2">{{ news.excerpt }}</p>
-          </router-link>
+          </article>
         </div>
       </div>
     </section>
@@ -184,12 +210,12 @@
             </div>
           </div>
           <div class="w-full md:w-1/2 min-h-[300px] relative overflow-hidden group">
-            <iframe 
+            <iframe
               class="absolute inset-0 w-full h-full grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500"
-              style="border:0;" 
-              loading="lazy" 
-              allowfullscreen 
-              referrerpolicy="no-referrer-when-downgrade" 
+              style="border:0;"
+              loading="lazy"
+              allowfullscreen
+              referrerpolicy="no-referrer-when-downgrade"
               :src="db.contact_infos.maps_embed_url">
             </iframe>
             <div class="absolute inset-0 bg-primary/10 pointer-events-none group-hover:opacity-0 transition-opacity duration-500"></div>
@@ -214,7 +240,14 @@ const kepalaDesa = computed(() => {
 })
 
 const featuredUmkms = computed(() => {
-    return db.value.umkms.filter(u => u.is_featured)
+    // Cari UMKM yang is_featured === true atau 1
+    const featured = db.value.umkms.filter(u => u.is_featured === true || u.is_featured === 1)
+
+    // Jika ada yang featured, tampilkan maksimal 3.
+    // Jika tidak ada sama sekali, tampilkan 3 UMKM pertama dari database sebagai fallback.
+    return featured.length > 0
+           ? featured.slice(0, 3)
+           : db.value.umkms.slice(0, 3)
 })
 
 const latestNews = computed(() => {

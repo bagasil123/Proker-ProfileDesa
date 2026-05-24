@@ -2,8 +2,8 @@
   <main class="pb-xl">
     <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
       <nav class="flex items-center gap-xs mb-md text-on-surface-variant font-body-sm text-body-sm mt-6">
-        <router-link to="/" class="hover:text-primary">Beranda</router-link>
-        <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+        <!-- <router-link to="/" class="hover:text-primary">Beranda</router-link>
+        <span class="material-symbols-outlined text-[16px]">chevron_right</span> -->
         <router-link to="/fasilitas" class="hover:text-primary">Fasilitas</router-link>
         <span class="material-symbols-outlined text-[16px]">chevron_right</span>
         <span class="text-primary font-medium">{{ facility.name }}</span>
@@ -26,7 +26,7 @@
                 {{ facility.description }}
               </p>
             </div>
-            
+
             <div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-md">
               <h2 class="font-headline-sm text-headline-sm text-primary mb-sm">Layanan Utama</h2>
               <div class="grid grid-cols-1 md:grid-cols-2 gap-sm">
@@ -108,11 +108,11 @@
               </div>
             </div>
             <div class="bg-surface-container rounded-xl overflow-hidden border border-outline-variant relative group w-full h-[300px]">
-              <iframe 
-                :src="facility.maps_embed_url" 
-                class="w-full h-full border-0" 
-                allowfullscreen="" 
-                loading="lazy" 
+              <iframe
+                :src="facility.maps_embed_url"
+                class="w-full h-full border-0"
+                allowfullscreen=""
+                loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade">
               </iframe>
               <a :href="facility.maps_url" target="_blank" class="absolute bottom-4 left-4 right-4 bg-surface/90 backdrop-blur-sm p-2 rounded-lg text-center font-label-sm text-label-sm hover:bg-surface transition-colors cursor-pointer block text-on-surface">
@@ -134,7 +134,7 @@ import { database } from '@/data/db.js'
 const route = useRoute()
 const db = ref(database)
 
-const openFaq = ref(0) 
+const openFaq = ref(0)
 
 const toggleFaq = (index) => {
     openFaq.value = openFaq.value === index ? null : index

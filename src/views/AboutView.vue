@@ -1,16 +1,13 @@
 <template>
   <main>
-    <header class="hero-gradient py-xl border-b border-outline-variant">
-      <div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
-        <nav class="flex items-center gap-2 mb-4 text-on-surface-variant font-label-sm">
-          <router-link to="/" class="hover:text-primary">Beranda</router-link>
-          <span class="material-symbols-outlined text-sm">chevron_right</span>
-          <span class="text-primary font-bold">Tentang Kami</span>
-        </nav>
-        <h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mb-2">Profil Desa {{ db.villages.name }}</h1>
-        <p class="text-body-lg text-on-surface-variant max-w-2xl">{{ db.villages.tagline }}</p>
+    <section class="relative bg-primary-container py-xl text-on-primary-container overflow-hidden">
+      <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop relative z-10">
+        <h1 class="font-display-lg text-display-lg mb-sm md:max-w-2xl">Profil Desa {{ db.villages.name }}</h1>
+        <p class="font-body-lg text-body-lg max-w-xl opacity-90">
+           {{ db.villages.tagline }}.
+        </p>
       </div>
-    </header>
+    </section>
     <section class="py-xl">
       <div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
         <div class="grid md:grid-cols-2 gap-xl items-center">
@@ -69,7 +66,7 @@
         <div class="bg-surface-container-low p-md md:p-xl rounded-xl border border-outline-variant overflow-x-auto pb-16">
           <div class="min-w-[1000px] flex flex-col items-center">
             <div class="flex items-center justify-center w-full">
-              <div class="flex items-center mb-8"> 
+              <div class="flex items-center mb-8">
                 <div @click="scrollToSection('perangkat-desa')" class="p-4 bg-surface-container-highest text-on-surface rounded-xl border border-outline-variant w-56 text-center shadow-sm z-10 hover:shadow-md cursor-pointer transition-shadow" v-if="getOfficial(2)">
                   <div class="font-label-md text-on-surface-variant mb-1">Ketua BPD</div>
                   <div class="font-headline-sm">{{ getOfficial(2).name }}</div>
@@ -95,7 +92,7 @@
             <div class="relative w-full flex flex-col items-center z-0">
               <div class="absolute top-0 left-[calc(100%/12)] right-[calc(100%/12)] border-t-2 border-outline z-0"></div>
               <div class="absolute top-0 w-px h-full bg-outline z-0"></div>
-              
+
               <div class="flex w-full">
                 <div v-for="i in [4,5,6,7,8,9]" :key="i" class="relative flex flex-col items-center flex-1">
                   <div class="w-px h-8 bg-outline z-0"></div>
@@ -110,7 +107,7 @@
             <div class="relative w-full flex flex-col items-center z-0">
               <div class="flex w-[50%] justify-between relative">
                  <div class="absolute top-0 left-[25%] right-[25%] border-t-2 border-outline z-0"></div>
-                 
+
                  <div v-for="i in [10,11]" :key="i" class="relative flex flex-col items-center flex-1">
                     <div class="w-px h-8 bg-outline z-0"></div>
                     <div @click="scrollToSection('perangkat-desa')" class="p-3 bg-surface-container-low rounded-lg border border-outline-variant w-[80%] text-center shadow-sm z-10 hover:shadow-md transition-shadow cursor-pointer" v-if="getOfficial(i)">

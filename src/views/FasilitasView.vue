@@ -1,15 +1,6 @@
 <template>
   <main>
     <section class="relative bg-primary-container py-xl text-on-primary-container overflow-hidden">
-      <div class="absolute inset-0 opacity-10 pointer-events-none">
-        <div class="grid grid-cols-6 h-full">
-          <div class="border-r border-on-primary-container"></div>
-          <div class="border-r border-on-primary-container"></div>
-          <div class="border-r border-on-primary-container"></div>
-          <div class="border-r border-on-primary-container"></div>
-          <div class="border-r border-on-primary-container"></div>
-        </div>
-      </div>
       <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop relative z-10">
         <h1 class="font-display-lg text-display-lg mb-sm md:max-w-2xl">Fasilitas &amp; Layanan Masyarakat</h1>
         <p class="font-body-lg text-body-lg max-w-xl opacity-90">

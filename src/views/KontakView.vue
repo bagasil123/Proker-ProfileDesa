@@ -1,9 +1,9 @@
 <template>
   <main>
-    <section class="relative bg-surface-container-low py-xl overflow-hidden">
+    <section class="relative bg-primary-container py-xl text-on-primary-container overflow-hidden">
       <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop relative z-10 text-center">
-        <h1 class="font-display-lg text-display-lg text-on-background mb-base">Hubungi Kami</h1>
-        <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
+        <h1 class="font-display-lg text-display-lg mb-base">Hubungi Kami</h1>
+        <p class="font-body-lg text-body-lg max-w-2xl mx-auto">
           Kami hadir untuk melayani kebutuhan administrasi dan informasi masyarakat Desa Pusaka. Sampaikan pertanyaan atau saran Anda melalui saluran resmi kami.
         </p>
       </div>
@@ -66,12 +66,12 @@
                 <label class="font-label-md text-label-md text-on-surface-variant">Pesan Anda</label>
                 <textarea required v-model="formData.message" class="w-full p-md rounded-lg border border-outline-variant bg-surface-bright font-body-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all resize-none" placeholder="Tuliskan pesan atau pertanyaan Anda di sini..." rows="4"></textarea>
               </div>
-              <button 
+              <button
                 :disabled="isSubmitting"
                 :class="[
                   'w-full h-12 font-label-md text-label-md rounded-lg hover:shadow-lg transition-all flex items-center justify-center gap-base',
                   submitStatus === 'success' ? 'bg-tertiary text-on-tertiary' : 'bg-primary text-on-primary'
-                ]" 
+                ]"
                 type="submit">
                 <template v-if="isSubmitting">
                   <span class="material-symbols-outlined animate-spin">sync</span> Mengirim...
@@ -92,12 +92,12 @@
     <section class="pb-xl">
       <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
         <div class="w-full h-[400px] rounded-xl overflow-hidden shadow-sm relative group grayscale hover:grayscale-0 transition-all duration-700">
-          <iframe 
+          <iframe
             class="w-full h-full"
-            style="border:0;" 
-            loading="lazy" 
-            allowfullscreen 
-            referrerpolicy="no-referrer-when-downgrade" 
+            style="border:0;"
+            loading="lazy"
+            allowfullscreen
+            referrerpolicy="no-referrer-when-downgrade"
             :src="db.contact_infos.maps_embed_url">
           </iframe>
           <div class="absolute inset-0 bg-primary/10 group-hover:bg-transparent transition-colors pointer-events-none"></div>
@@ -120,9 +120,9 @@
           <p class="font-body-md text-body-md text-on-surface-variant">Mungkin pertanyaan Anda sudah terjawab di sini.</p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-md max-w-4xl mx-auto">
-          <div v-for="(faq, index) in faqs" :key="index" class="bg-surface-container-lowest p-md rounded-xl border border-outline-variant/30 shadow-sm hover:shadow-md transition-shadow">
-            <h3 class="font-headline-sm text-headline-sm mb-xs">{{ faq.question }}</h3>
-            <p class="font-body-sm text-body-sm text-on-surface-variant">{{ faq.answer }}</p>
+          <div v-for="(faq, index) in faqs" :key="index" class="bg-primary-container p-md rounded-xl border border-outline-variant/30 shadow-sm hover:shadow-md transition-shadow">
+            <h3 class="font-headline-lg text-headline-sm text-on-primary mb-sm">{{ faq.question }}</h3>
+            <p class="font-body-md text-body-md opacity-90 text-on-primary">{{ faq.answer }}</p>
           </div>
         </div>
       </div>
@@ -150,7 +150,7 @@ const targetEmail = ref('bagas.indra.bil@gmail.com') // Tujuan email utama
 
 const submitForm = () => {
     if (isSubmitting.value) return
-    
+
     isSubmitting.value = true
     submitStatus.value = 'idle'
     const subject = encodeURIComponent(`[Website Desa - Kontak] ${formData.value.subject} - ${formData.value.name}`)
@@ -159,7 +159,7 @@ const submitForm = () => {
     setTimeout(() => {
         isSubmitting.value = false
         submitStatus.value = 'success'
-        
+
         setTimeout(() => {
             submitStatus.value = 'idle'
             formData.value = {

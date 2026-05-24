@@ -1,28 +1,28 @@
 <template>
   <main class="pb-xl">
-    <section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mt-lg">
-      <div class="max-w-2xl">
-        <h1 class="font-headline-lg text-headline-lg md:text-display-lg md:font-display-lg text-on-background mb-sm">
+    <header class="relative overflow-hidden bg-primary-container text-on-primary-container py-xl mb-lg">
+      <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop relative z-10 text-center md:text-left">
+        <h1 class="font-display-lg text-display-lg md:text-display-lg mb-sm leading-tight">
           Berita &amp; Pengumuman Desa
         </h1>
-        <p class="font-body-lg text-body-lg text-on-surface-variant">
+        <p class="font-body-lg text-body-lg max-w-2xl mb-md text-on-primary-container/80">
           Dapatkan informasi terbaru mengenai program pembangunan, kegiatan kemasyarakatan, dan berita terkini langsung dari kantor Desa Pusaka.
         </p>
       </div>
-    </section>
+    </header>
     <section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mt-lg">
       <div class="flex flex-col md:flex-row gap-gutter items-center justify-between bg-surface-container-low p-md rounded-xl border border-outline-variant">
         <div class="relative w-full md:w-1/3 group-focus-within:ring-2">
           <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline">search</span>
-          <input 
+          <input
             v-model="searchQuery"
-            class="w-full pl-12 pr-4 py-3 bg-white border border-outline-variant rounded-full font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all" 
-            placeholder="Cari judul berita..." 
+            class="w-full pl-12 pr-4 py-3 bg-white border border-outline-variant rounded-full font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+            placeholder="Cari judul berita..."
             type="text"
           />
         </div>
         <div class="flex gap-2 overflow-x-auto w-full md:w-auto pb-2 md:pb-0 scrollbar-hide">
-          <button 
+          <button
             @click="activeCategory = 'Semua'"
             :class="[
               'whitespace-nowrap px-md py-2 rounded-full font-label-md text-label-md transition-colors',
@@ -30,7 +30,7 @@
             ]">
             Semua
           </button>
-          <button 
+          <button
             v-for="category in categories" :key="category"
             @click="activeCategory = category"
             :class="[
@@ -100,13 +100,13 @@
     <section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mt-xl flex flex-col md:flex-row items-center justify-between gap-md" v-if="filteredNews.length > 0">
       <span class="font-body-sm text-body-sm text-on-surface-variant">Menampilkan {{ (currentPage - 1) * itemsPerPage + 1 }}-{{ Math.min(currentPage * itemsPerPage, filteredNews.length) }} dari {{ filteredNews.length }} berita</span>
       <div class="flex items-center gap-2">
-        <button 
-          @click="changePage(currentPage - 1)" 
+        <button
+          @click="changePage(currentPage - 1)"
           :disabled="currentPage === 1"
           class="w-10 h-10 flex items-center justify-center rounded-full border border-outline-variant text-outline hover:bg-surface-container-high transition-colors disabled:opacity-50 cursor-pointer disabled:cursor-not-allowed">
           <span class="material-symbols-outlined">chevron_left</span>
         </button>
-        <button 
+        <button
           v-for="page in totalPages" :key="page"
           @click="changePage(page)"
           :class="[
@@ -115,8 +115,8 @@
           ]">
           {{ page }}
         </button>
-        <button 
-          @click="changePage(currentPage + 1)" 
+        <button
+          @click="changePage(currentPage + 1)"
           :disabled="currentPage === totalPages"
           class="w-10 h-10 flex items-center justify-center rounded-full border border-outline-variant text-on-surface-variant hover:bg-surface-container-high transition-colors disabled:opacity-50 cursor-pointer disabled:cursor-not-allowed">
           <span class="material-symbols-outlined">chevron_right</span>
@@ -152,19 +152,19 @@ const featuredNews = computed(() => {
 
 const filteredNews = computed(() => {
     let result = sortedNews.value.slice(1)
-    
+
     if (activeCategory.value !== 'Semua') {
         result = result.filter(news => news.category === activeCategory.value)
     }
-    
+
     if (searchQuery.value) {
         const query = searchQuery.value.toLowerCase()
-        result = db.value.news_posts.filter(news => 
-            news.title.toLowerCase().includes(query) || 
+        result = db.value.news_posts.filter(news =>
+            news.title.toLowerCase().includes(query) ||
             news.excerpt.toLowerCase().includes(query)
         )
     }
-    
+
     return result
 })
 

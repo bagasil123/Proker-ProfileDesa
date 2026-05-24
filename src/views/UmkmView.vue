@@ -1,20 +1,20 @@
 <template>
   <main class="pb-xl">
-    <header class="relative overflow-hidden bg-primary-container/10 py-xl mb-lg">
+    <header class="relative overflow-hidden bg-primary-container text-on-primary-container py-xl mb-lg">
       <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop relative z-10 text-center md:text-left">
-        <h1 class="font-display-lg text-display-lg md:text-display-lg text-primary mb-sm leading-tight">
+        <h1 class="font-display-lg text-display-lg md:text-display-lg mb-sm leading-tight">
           Katalog UMKM Desa
         </h1>
-        <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mb-md">
+        <p class="font-body-lg text-body-lg max-w-2xl mb-md">
           Dukung ekonomi lokal dengan menjelajahi produk unggulan dari warga Pusaka Desa. Dari tangan terampil pengrajin hingga hasil bumi segar dari petani kami.
         </p>
         <div class="bg-surface-container-lowest p-md rounded-xl shadow-sm max-w-4xl mx-auto md:mx-0 flex flex-col md:flex-row gap-sm items-center">
           <div class="relative w-full flex-grow group-focus-within:ring-2">
             <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">search</span>
-            <input 
+            <input
               v-model="searchQuery"
-              class="w-full pl-10 pr-4 py-3 bg-surface-container border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none text-body-md transition-all" 
-              placeholder="Cari produk atau nama UMKM..." 
+              class="w-full pl-10 pr-4 py-3 bg-surface-container border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none text-body-md transition-all"
+              placeholder="Cari produk atau nama UMKM..."
               type="text"
             />
           </div>
@@ -26,10 +26,10 @@
       </div>
       <div class="absolute top-0 right-0 -translate-y-1/2 translate-x-1/4 w-[600px] h-[600px] bg-primary/5 rounded-full blur-3xl pointer-events-none"></div>
     </header>
-    
+
     <section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
       <div class="flex flex-wrap gap-sm mb-lg justify-center md:justify-start">
-        <button 
+        <button
           @click="activeCategory = 'Semua'"
           :class="[
             'px-md py-2 rounded-full font-label-md shadow-sm transition-colors',
@@ -37,7 +37,7 @@
           ]">
           Semua
         </button>
-        <button 
+        <button
           v-for="category in db.umkm_categories" :key="category.id"
           @click="activeCategory = category.name"
           :class="[
@@ -113,22 +113,22 @@ const getCategoryStyle = (id) => {
 
 const filteredUmkms = computed(() => {
     let result = db.value.umkms
-    
+
     if (activeCategory.value !== 'Semua') {
         const cat = db.value.umkm_categories.find(c => c.name === activeCategory.value)
         if (cat) {
             result = result.filter(u => u.umkm_category_id === cat.id)
         }
     }
-    
+
     if (searchQuery.value) {
         const query = searchQuery.value.toLowerCase()
-        result = result.filter(u => 
-            u.name.toLowerCase().includes(query) || 
+        result = result.filter(u =>
+            u.name.toLowerCase().includes(query) ||
             u.description.toLowerCase().includes(query)
         )
     }
-    
+
     return result
 })
 </script>

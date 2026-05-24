@@ -2,7 +2,6 @@
   <main class="pb-xl">
     <nav class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-6">
       <div class="flex items-center text-on-surface-variant font-body-sm">
-        <router-link to="/" class="breadcrumb-item hover:text-primary transition-colors">Beranda</router-link>
         <router-link to="/umkm" class="breadcrumb-item hover:text-primary transition-colors">UMKM</router-link>
         <span class="text-primary font-semibold">{{ product.name }}</span>
       </div>
@@ -71,11 +70,11 @@
       <div class="mt-xl" id="maps">
         <h2 class="font-headline-md text-headline-md mb-6">Lokasi UMKM</h2>
         <div class="rounded-[1.5rem] overflow-hidden border border-outline-variant h-[400px] relative">
-          <iframe 
-            :src="product.maps_embed_url" 
-            class="w-full h-full border-0 absolute inset-0" 
-            allowfullscreen="" 
-            loading="lazy" 
+          <iframe
+            :src="product.maps_embed_url"
+            class="w-full h-full border-0 absolute inset-0"
+            allowfullscreen=""
+            loading="lazy"
             referrerpolicy="no-referrer-when-downgrade">
           </iframe>
           <div class="absolute bottom-6 left-6 right-6 md:right-auto bg-surface/90 backdrop-blur-md p-md rounded-xl border border-outline-variant shadow-lg max-w-sm">
@@ -92,33 +91,93 @@
         </div>
       </div>
       <section class="mt-xl">
-        <div class="flex justify-between items-end mb-8">
-          <div>
-            <h2 class="font-headline-md text-headline-md">Produk Terkait</h2>
-            <p class="text-on-surface-variant">Temukan camilan lezat lainnya dari pengrajin desa kami.</p>
-          </div>
-          <router-link to="/umkm" class="text-primary font-label-md flex items-center gap-1 hover:underline underline-offset-4">
-            Lihat Semua <span class="material-symbols-outlined">arrow_forward</span>
+  <div class="flex justify-between items-end mb-8">
+    <div>
+      <h2 class="font-headline-md text-headline-md">Produk Terkait</h2>
+      <p class="text-on-surface-variant">
+        Temukan produk UMKM lainnya dari desa kami.
+      </p>
+    </div>
+    <router-link
+      to="/umkm"
+      class="text-primary font-label-md flex items-center gap-1 hover:underline underline-offset-4"
+    >
+      Lihat Semua <span class="material-symbols-outlined">arrow_forward</span>
+    </router-link>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+    <article
+      v-for="related in relatedProducts"
+      :key="related.id"
+      class="bg-surface-container-lowest rounded-xl border border-outline-variant overflow-hidden hover:shadow-md transition-shadow group"
+    >
+      <div class="relative h-56 overflow-hidden">
+        <router-link :to="`/umkm/${related.id}`">
+          <img
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            :alt="related.name"
+            :src="related.image"
+          />
+        </router-link>
+
+        <div class="absolute top-4 left-4">
+          <span
+            :class="[
+              'px-3 py-1 rounded-full text-label-sm font-bold shadow-sm',
+              related.style
+            ]"
+          >
+            {{ related.category }}
+          </span>
+        </div>
+      </div>
+
+      <div class="p-md">
+        <h3 class="font-headline-sm text-headline-sm text-on-surface mb-xs">
+          {{ related.name }}
+        </h3>
+        <p class="font-body-sm text-body-sm text-on-surface-variant mb-md line-clamp-2">
+          {{ related.description }}
+        </p>
+
+        <div class="flex items-center justify-between mb-lg">
+          <span class="text-primary font-bold font-body-md">{{ related.price }}</span>
+        </div>
+
+        <div class="flex flex-col gap-sm">
+          <router-link
+            :to="`/umkm/${related.id}`"
+            class="flex items-center justify-center gap-2 py-3 bg-surface-container-high text-on-surface border border-outline-variant rounded-lg font-label-md hover:bg-surface-container-highest transition-colors w-full"
+          >
+            <span class="material-symbols-outlined text-[18px]">info</span>
+            Lihat Detail
           </router-link>
-        </div>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-md">
-          <div v-for="related in relatedProducts" :key="related.id" class="group bg-surface-container-lowest rounded-[1.5rem] overflow-hidden border border-outline-variant hover:shadow-lg transition-all">
-            <div class="aspect-square overflow-hidden relative">
-              <router-link :to="`/umkm/${related.id}`">
-                <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 cursor-pointer" :alt="related.name" :src="related.image"/>
-              </router-link>
-            </div>
-            <div class="p-4 flex flex-col h-full">
-              <p class="text-primary font-label-sm mb-1">{{ related.category }}</p>
-              <h3 class="font-body-lg font-bold text-on-surface mb-2 line-clamp-2">{{ related.name }}</h3>
-              <p class="text-primary font-semibold mb-4">{{ related.price }}</p>
-              <router-link :to="`/umkm/${related.id}`" class="mt-auto text-center w-full py-2 border border-outline text-on-surface-variant rounded-full font-label-md group-hover:bg-primary group-hover:text-on-primary group-hover:border-primary transition-colors cursor-pointer block">
-                Lihat Detail
-              </router-link>
-            </div>
+
+          <div class="grid grid-cols-2 gap-sm">
+            <a
+              :href="`https://wa.me/${related.whatsapp}`"
+              target="_blank"
+              class="flex items-center justify-center gap-2 py-3 bg-[#25D366] text-white rounded-lg font-label-md hover:opacity-90"
+            >
+              <span class="material-symbols-outlined text-[18px]">chat</span>
+              WhatsApp
+            </a>
+
+            <a
+              :href="related.maps_url"
+              target="_blank"
+              class="flex items-center justify-center gap-2 py-3 border border-outline text-on-surface-variant rounded-lg font-label-md hover:bg-surface-container-low transition-colors"
+            >
+              <span class="material-symbols-outlined text-[18px]">location_on</span>
+              Lokasi
+            </a>
           </div>
         </div>
-      </section>
+      </div>
+    </article>
+  </div>
+</section>
     </div>
   </main>
 </template>
@@ -152,7 +211,7 @@ const relatedProducts = computed(() => {
     const currentId = parseInt(route.params.id) || 1
     return db.value.umkms
         .filter(u => u.id !== currentId)
-        .slice(0, 4)
+        .slice(0, 3)
         .map(u => ({
             ...u,
             image: u.product_image_path,

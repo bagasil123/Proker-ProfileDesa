@@ -2,8 +2,6 @@
   <main class="pb-xl">
     <div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto mt-6">
       <nav class="flex items-center gap-2 mb-8 text-on-surface-variant overflow-x-auto whitespace-nowrap">
-        <router-link to="/" class="font-label-md text-label-md hover:text-primary">Beranda</router-link>
-        <span class="material-symbols-outlined text-sm">chevron_right</span>
         <router-link to="/berita" class="font-label-md text-label-md hover:text-primary">Berita</router-link>
         <span class="material-symbols-outlined text-sm">chevron_right</span>
         <span class="font-label-md text-label-md text-primary">{{ article.titleShort }}</span>
@@ -38,7 +36,7 @@
               </div>
             </div>
           </header>
-          
+
           <figure class="mb-10 group">
             <div class="aspect-video w-full overflow-hidden rounded-xl bg-surface-container mb-3 shadow-md">
               <img :alt="article.title" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" :src="article.image"/>
@@ -47,7 +45,7 @@
               {{ article.imageCaption }}
             </figcaption>
           </figure>
-          
+
           <div class="article-content max-w-none" v-html="article.content"></div>
           <div class="mt-12 py-8 border-t border-b border-outline-variant flex flex-col md:flex-row md:items-center justify-between gap-6">
             <div>
@@ -85,12 +83,12 @@
                   <label class="font-label-md text-on-surface">Pesan atau Pertanyaan</label>
                   <textarea v-model="formData.message" required class="w-full bg-white border border-outline-variant rounded-lg px-4 py-3 focus:ring-2 focus:ring-primary focus:border-primary transition-all" placeholder="Tuliskan pesan Anda di sini..." rows="4"></textarea>
                 </div>
-                <button 
+                <button
                   :disabled="isSubmitting"
                   :class="[
                     'px-8 py-3 rounded-lg font-label-md transition-all',
                     submitStatus === 'success' ? 'bg-primary-container text-on-primary-container' : 'bg-primary text-on-primary hover:bg-primary-container hover:text-on-primary-container'
-                  ]" 
+                  ]"
                   type="submit">
                   {{ isSubmitting ? 'Mengirim...' : (submitStatus === 'success' ? 'Pesan Terkirim!' : 'Kirim Pertanyaan') }}
                 </button>
@@ -124,7 +122,7 @@
               <router-link v-for="cat in categories" :key="cat" to="/berita" class="px-3 py-1 rounded-full bg-surface-container-highest text-on-surface text-label-sm cursor-pointer hover:bg-primary-container hover:text-on-primary transition-all">{{ cat }}</router-link>
             </div>
           </div>
-          
+
         </aside>
       </div>
     </div>
@@ -149,7 +147,7 @@ const viewsCount = ref('0')
 const loadAndIncrementViews = (id) => {
     const storageKey = `news_views_${id}`
     let currentViews = localStorage.getItem(storageKey)
-    
+
     if (!currentViews) {
         const baseNews = db.value.news_posts.find(n => n.id == id) || db.value.news_posts[0]
         const baseViews = baseNews && baseNews.views ? parseInt(baseNews.views.replace(/\./g, '')) : 0
@@ -157,7 +155,7 @@ const loadAndIncrementViews = (id) => {
     } else {
         currentViews = parseInt(currentViews) + 1
     }
-    
+
     localStorage.setItem(storageKey, currentViews.toString())
     viewsCount.value = currentViews.toLocaleString('id-ID')
 }
@@ -214,7 +212,7 @@ const submitForm = () => {
     setTimeout(() => {
         isSubmitting.value = false
         submitStatus.value = 'success'
-        
+
         setTimeout(() => {
             submitStatus.value = 'idle'
             formData.value = { name: '', email: '', message: '' }
