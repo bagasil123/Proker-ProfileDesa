@@ -1,97 +1,107 @@
 <template>
   <main>
-    <section class="relative bg-primary-container py-xl text-on-primary-container overflow-hidden">
+    <!-- 1. HEADER HERO -->
+    <section class="relative bg-primary-container py-12 md:py-xl text-on-primary-container overflow-hidden">
       <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop relative z-10 text-center">
-        <h1 class="font-display-lg text-display-lg mb-base">Hubungi Kami</h1>
-        <p class="font-body-lg text-body-lg max-w-2xl mx-auto">
+        <h1 class="font-display-lg font-bold text-4xl md:text-display-lg mb-4 md:mb-base">Hubungi Kami</h1>
+        <p class="font-body-md md:font-body-lg max-w-2xl mx-auto px-4 md:px-0 opacity-90">
           Kami hadir untuk melayani kebutuhan administrasi dan informasi masyarakat Desa Pusaka. Sampaikan pertanyaan atau saran Anda melalui saluran resmi kami.
         </p>
       </div>
       <div class="absolute top-0 right-0 -translate-y-1/2 translate-x-1/4 w-[600px] h-[600px] bg-primary/5 rounded-full blur-3xl pointer-events-none"></div>
       <div class="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/4 w-[400px] h-[400px] bg-secondary/5 rounded-full blur-3xl pointer-events-none"></div>
     </section>
-    <section class="py-xl">
+
+    <!-- 2. INFO KONTAK & FORMULIR -->
+    <section class="py-12 md:py-xl">
       <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-xl items-start">
-          <div class="space-y-lg">
-            <div class="space-y-md">
-              <h2 class="font-headline-lg text-headline-lg text-primary">Informasi Kontak</h2>
-              <p class="font-body-md text-body-md text-on-surface-variant">Silakan kunjungi kantor kami atau hubungi kami melalui media di bawah ini untuk respon yang lebih cepat.</p>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-xl items-start">
+
+          <div class="space-y-8 md:space-y-lg">
+            <div class="space-y-2 md:space-y-md text-center md:text-left">
+              <h2 class="text-2xl font-headline-md md:font-headline-lg font-bold text-primary">Informasi Kontak</h2>
+              <p class="font-body-sm md:font-body-md text-on-surface-variant">Silakan kunjungi kantor kami atau hubungi kami melalui media di bawah ini untuk respon yang lebih cepat.</p>
             </div>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-md">
-              <div class="bg-surface-container-lowest p-md rounded-xl border border-outline-variant/30 flex flex-col gap-base shadow-sm hover:shadow-md transition-shadow">
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-md">
+              <div class="bg-surface-container-lowest p-4 md:p-md rounded-xl border border-outline-variant/30 flex flex-col gap-3 md:gap-base shadow-sm hover:shadow-md transition-shadow">
                 <span class="material-symbols-outlined text-primary text-3xl">location_on</span>
-                <h3 class="font-headline-sm text-headline-sm">Alamat Kantor</h3>
-                <p class="font-body-sm text-body-sm text-on-surface-variant">{{ db.contact_infos.office_address }}</p>
+                <h3 class="font-headline-sm font-bold text-on-surface">Alamat Kantor</h3>
+                <p class="font-body-sm text-on-surface-variant">{{ db.contact_infos.office_address }}</p>
               </div>
-              <div class="bg-surface-container-lowest p-md rounded-xl border border-outline-variant/30 flex flex-col gap-base shadow-sm hover:shadow-md transition-shadow">
+              <div class="bg-surface-container-lowest p-4 md:p-md rounded-xl border border-outline-variant/30 flex flex-col gap-3 md:gap-base shadow-sm hover:shadow-md transition-shadow">
                 <span class="material-symbols-outlined text-primary text-3xl">call</span>
-                <h3 class="font-headline-sm text-headline-sm">Telepon</h3>
-                <p class="font-body-sm text-body-sm text-on-surface-variant">{{ db.contact_infos.phone }}</p>
+                <h3 class="font-headline-sm font-bold text-on-surface">Telepon</h3>
+                <p class="font-body-sm text-on-surface-variant">{{ db.contact_infos.phone }}</p>
               </div>
-              <div class="bg-surface-container-lowest p-md rounded-xl border border-outline-variant/30 flex flex-col gap-base shadow-sm hover:shadow-md transition-shadow">
+              <div class="bg-surface-container-lowest p-4 md:p-md rounded-xl border border-outline-variant/30 flex flex-col gap-3 md:gap-base shadow-sm hover:shadow-md transition-shadow">
                 <span class="material-symbols-outlined text-primary text-3xl">mail</span>
-                <h3 class="font-headline-sm text-headline-sm">Email</h3>
-                <p class="font-body-sm text-body-sm text-on-surface-variant">{{ db.contact_infos.email }}</p>
+                <h3 class="font-headline-sm font-bold text-on-surface">Email</h3>
+                <p class="font-body-sm text-on-surface-variant break-all">{{ db.contact_infos.email }}</p>
               </div>
-              <div class="bg-surface-container-lowest p-md rounded-xl border border-outline-variant/30 flex flex-col gap-base shadow-sm hover:shadow-md transition-shadow">
+              <div class="bg-surface-container-lowest p-4 md:p-md rounded-xl border border-outline-variant/30 flex flex-col gap-3 md:gap-base shadow-sm hover:shadow-md transition-shadow">
                 <span class="material-symbols-outlined text-primary text-3xl">schedule</span>
-                <h3 class="font-headline-sm text-headline-sm">Jam Operasional</h3>
-                <p class="font-body-sm text-body-sm text-on-surface-variant">{{ db.contact_infos.operational_hours }}</p>
+                <h3 class="font-headline-sm font-bold text-on-surface">Jam Operasional</h3>
+                <p class="font-body-sm text-on-surface-variant">{{ db.contact_infos.operational_hours }}</p>
               </div>
             </div>
           </div>
-          <div class="bg-surface-container-lowest p-md md:p-lg rounded-xl border border-outline-variant/20 shadow-sm">
-            <form @submit.prevent="submitForm" class="space-y-md" id="contactForm">
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-md">
-                <div class="space-y-xs">
-                  <label class="font-label-md text-label-md text-on-surface-variant">Nama Lengkap</label>
-                  <input required v-model="formData.name" class="w-full h-12 px-md rounded-lg border border-outline-variant bg-surface-bright font-body-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all" placeholder="Masukkan nama Anda" type="text"/>
+
+          <!-- Bagian Kanan: Form Kontak -->
+          <div class="bg-surface-container-lowest p-6 md:p-lg rounded-xl border border-outline-variant/20 shadow-sm mt-4 md:mt-0">
+            <form @submit.prevent="submitForm" class="space-y-6 md:space-y-md" id="contactForm">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-md">
+                <div class="space-y-2">
+                  <label class="font-label-md text-on-surface-variant font-bold">Nama Lengkap</label>
+                  <input required v-model="formData.name" class="w-full h-12 px-4 md:px-md rounded-lg border border-outline-variant bg-surface-bright font-body-sm md:font-body-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all" placeholder="Masukkan nama Anda" type="text"/>
                 </div>
-                <div class="space-y-xs">
-                  <label class="font-label-md text-label-md text-on-surface-variant">Alamat Email</label>
-                  <input required v-model="formData.email" class="w-full h-12 px-md rounded-lg border border-outline-variant bg-surface-bright font-body-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all" placeholder="nama@email.com" type="email"/>
+                <div class="space-y-2">
+                  <label class="font-label-md text-on-surface-variant font-bold">Alamat Email</label>
+                  <input required v-model="formData.email" class="w-full h-12 px-4 md:px-md rounded-lg border border-outline-variant bg-surface-bright font-body-sm md:font-body-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all" placeholder="nama@email.com" type="email"/>
                 </div>
               </div>
-              <div class="space-y-xs">
-                <label class="font-label-md text-label-md text-on-surface-variant">Perihal</label>
-                <select v-model="formData.subject" class="w-full h-12 px-md rounded-lg border border-outline-variant bg-surface-bright font-body-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all appearance-none">
+              <div class="space-y-2">
+                <label class="font-label-md text-on-surface-variant font-bold">Perihal</label>
+                <select v-model="formData.subject" class="w-full h-12 px-4 md:px-md rounded-lg border border-outline-variant bg-surface-bright font-body-sm md:font-body-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all appearance-none cursor-pointer">
                   <option>Layanan Administrasi</option>
                   <option>Pengaduan Masyarakat</option>
                   <option>Informasi Desa</option>
                   <option>Lainnya</option>
                 </select>
               </div>
-              <div class="space-y-xs">
-                <label class="font-label-md text-label-md text-on-surface-variant">Pesan Anda</label>
-                <textarea required v-model="formData.message" class="w-full p-md rounded-lg border border-outline-variant bg-surface-bright font-body-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all resize-none" placeholder="Tuliskan pesan atau pertanyaan Anda di sini..." rows="4"></textarea>
+              <div class="space-y-2">
+                <label class="font-label-md text-on-surface-variant font-bold">Pesan Anda</label>
+                <textarea required v-model="formData.message" class="w-full p-4 md:p-md rounded-lg border border-outline-variant bg-surface-bright font-body-sm md:font-body-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all resize-none" placeholder="Tuliskan pesan atau pertanyaan Anda di sini..." rows="4"></textarea>
               </div>
               <button
                 :disabled="isSubmitting"
                 :class="[
-                  'w-full h-12 font-label-md text-label-md rounded-lg hover:shadow-lg transition-all flex items-center justify-center gap-base',
+                  'w-full h-12 font-label-md font-bold rounded-lg hover:shadow-lg transition-all flex items-center justify-center gap-2',
                   submitStatus === 'success' ? 'bg-tertiary text-on-tertiary' : 'bg-primary text-on-primary'
                 ]"
                 type="submit">
                 <template v-if="isSubmitting">
-                  <span class="material-symbols-outlined animate-spin">sync</span> Mengirim...
+                  <span class="material-symbols-outlined text-[20px] animate-spin">sync</span> Mengirim...
                 </template>
                 <template v-else-if="submitStatus === 'success'">
-                  <span class="material-symbols-outlined">check_circle</span> Berhasil Terkirim
+                  <span class="material-symbols-outlined text-[20px]">check_circle</span> Berhasil Terkirim
                 </template>
                 <template v-else>
                   Kirim Pesan
-                  <span class="material-symbols-outlined">send</span>
+                  <span class="material-symbols-outlined text-[20px]">send</span>
                 </template>
               </button>
             </form>
           </div>
+
         </div>
       </div>
     </section>
-    <section class="pb-xl">
+
+    <!-- 3. PETA MAPS -->
+    <section class="pb-12 md:pb-xl">
       <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
-        <div class="w-full h-[400px] rounded-xl overflow-hidden shadow-sm relative group grayscale hover:grayscale-0 transition-all duration-700">
+        <div class="w-full h-[300px] md:h-[400px] rounded-xl overflow-hidden shadow-sm relative group grayscale-0 md:grayscale hover:grayscale-0 transition-all duration-700">
           <iframe
             class="w-full h-full"
             style="border:0;"
@@ -101,28 +111,30 @@
             :src="db.contact_infos.maps_embed_url">
           </iframe>
           <div class="absolute inset-0 bg-primary/10 group-hover:bg-transparent transition-colors pointer-events-none"></div>
-          <div class="absolute bottom-md left-md right-md md:right-auto bg-surface-container-lowest p-md rounded-lg border border-outline-variant shadow-lg flex items-center gap-md max-w-sm pointer-events-none">
+          <div class="absolute bottom-4 left-4 right-4 md:bottom-md md:left-md md:right-auto bg-surface-container-lowest p-3 md:p-md rounded-lg border border-outline-variant shadow-lg flex items-center gap-3 md:gap-md md:max-w-sm pointer-events-none">
             <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
-              <span class="material-symbols-outlined text-primary">pin_drop</span>
+              <span class="material-symbols-outlined text-[20px] md:text-2xl text-primary">pin_drop</span>
             </div>
             <div>
-              <p class="font-label-md text-label-md">Kantor Desa Pusaka</p>
-              <p class="font-body-sm text-body-sm text-on-surface-variant">Navigasi Peta Interaktif</p>
+              <p class="font-label-md font-bold text-on-surface">Kantor Desa Pusaka</p>
+              <p class="font-body-sm text-on-surface-variant">Navigasi Peta Interaktif</p>
             </div>
           </div>
         </div>
       </div>
     </section>
-    <section class="py-xl bg-surface-container-low">
+
+    <!-- 4. FAQ -->
+    <section class="py-12 md:py-xl bg-surface-container-low">
       <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
-        <div class="text-center mb-lg">
-          <h2 class="font-headline-lg text-headline-lg text-on-background">Pertanyaan Populer (FAQ)</h2>
-          <p class="font-body-md text-body-md text-on-surface-variant">Mungkin pertanyaan Anda sudah terjawab di sini.</p>
+        <div class="text-center mb-8 md:mb-lg">
+          <h2 class="text-2xl font-headline-md md:font-headline-lg font-bold text-on-background mb-2">Pertanyaan Populer (FAQ)</h2>
+          <p class="font-body-sm md:font-body-md text-on-surface-variant">Mungkin pertanyaan Anda sudah terjawab di sini.</p>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-md max-w-4xl mx-auto">
-          <div v-for="(faq, index) in faqs" :key="index" class="bg-primary-container p-md rounded-xl border border-outline-variant/30 shadow-sm hover:shadow-md transition-shadow">
-            <h3 class="font-headline-lg text-headline-sm text-on-primary mb-sm">{{ faq.question }}</h3>
-            <p class="font-body-md text-body-md opacity-90 text-on-primary">{{ faq.answer }}</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-md max-w-4xl mx-auto">
+          <div v-for="(faq, index) in faqs" :key="index" class="bg-primary-container p-5 md:p-md rounded-xl border border-outline-variant/30 shadow-sm hover:shadow-md transition-shadow">
+            <h3 class="font-headline-sm font-bold text-on-primary mb-2 md:mb-sm">{{ faq.question }}</h3>
+            <p class="font-body-sm md:font-body-md opacity-90 text-on-primary">{{ faq.answer }}</p>
           </div>
         </div>
       </div>

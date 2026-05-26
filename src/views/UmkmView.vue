@@ -1,55 +1,65 @@
 <template>
-  <main class="pb-xl">
-    <header class="relative overflow-hidden bg-primary-container text-on-primary-container py-xl mb-lg">
+  <main class="pb-12 md:pb-xl">
+    <!-- 1. HEADER -->
+    <header class="relative overflow-hidden bg-primary-container text-on-primary-container py-12 md:py-xl">
       <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop relative z-10 text-center md:text-left">
-        <h1 class="font-display-lg text-display-lg md:text-display-lg mb-sm leading-tight">
+        <h1 class="font-display-lg font-bold text-4xl md:text-display-lg mb-4 md:mb-sm leading-tight">
           Katalog UMKM Desa
         </h1>
-        <p class="font-body-lg text-body-lg max-w-2xl mb-md">
+        <p class="font-body-md md:font-body-lg max-w-2xl mx-auto md:mx-0 mb-4 md:mb-md text-on-primary-container/80">
           Dukung ekonomi lokal dengan menjelajahi produk unggulan dari warga Pusaka Desa. Dari tangan terampil pengrajin hingga hasil bumi segar dari petani kami.
         </p>
-        <div class="bg-surface-container-lowest p-md rounded-xl shadow-sm max-w-4xl mx-auto md:mx-0 flex flex-col md:flex-row gap-sm items-center">
-          <div class="relative w-full flex-grow group-focus-within:ring-2">
-            <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">search</span>
-            <input
-              v-model="searchQuery"
-              class="w-full pl-10 pr-4 py-3 bg-surface-container border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none text-body-md transition-all"
-              placeholder="Cari produk atau nama UMKM..."
-              type="text"
-            />
-          </div>
-          <button class="w-full md:w-auto px-lg py-3 bg-primary text-on-primary rounded-lg font-label-md flex items-center justify-center gap-2 hover:opacity-90">
-            <span class="material-symbols-outlined">filter_list</span>
-            Cari
-          </button>
-        </div>
       </div>
       <div class="absolute top-0 right-0 -translate-y-1/2 translate-x-1/4 w-[600px] h-[600px] bg-primary/5 rounded-full blur-3xl pointer-events-none"></div>
     </header>
 
-    <section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
-      <div class="flex flex-wrap gap-sm mb-lg justify-center md:justify-start">
-        <button
-          @click="activeCategory = 'Semua'"
-          :class="[
-            'px-md py-2 rounded-full font-label-md shadow-sm transition-colors',
-            activeCategory === 'Semua' ? 'bg-primary text-on-primary' : 'bg-surface-container-high text-on-surface-variant hover:bg-primary-container/20'
-          ]">
-          Semua
-        </button>
-        <button
-          v-for="category in db.umkm_categories" :key="category.id"
-          @click="activeCategory = category.name"
-          :class="[
-            'px-md py-2 rounded-full font-label-md transition-colors',
-            activeCategory === category.name ? 'bg-primary text-on-primary' : 'bg-surface-container-high text-on-surface-variant hover:bg-primary-container/20'
-          ]">
-          {{ category.name }}
-        </button>
+    <!-- 2. SEARCH & FILTER BAR -->
+    <section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mt-8 md:mt-lg mb-8 md:mb-lg">
+      <div class="flex flex-col md:flex-row gap-4 md:gap-gutter items-center justify-between bg-surface-container-low p-4 md:p-md rounded-xl border border-outline-variant">
+
+        <div class="relative w-full md:w-1/3 group-focus-within:ring-2">
+          <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline text-[20px] md:text-[24px]">search</span>
+          <input
+            v-model="searchQuery"
+            class="w-full pl-12 pr-4 py-3 bg-white border border-outline-variant rounded-full font-body-sm md:font-body-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all shadow-sm"
+            placeholder="Cari produk atau nama UMKM..."
+            type="text"
+          />
+        </div>
+
+        <div class="flex gap-2 overflow-x-auto w-full md:w-auto mt-2 md:mt-0 pb-2 md:pb-0 scrollbar-hide">
+          <button
+            @click="activeCategory = 'Semua'"
+            :class="[
+              'whitespace-nowrap px-4 md:px-md py-2 rounded-full font-label-md transition-colors',
+              activeCategory === 'Semua' ? 'bg-primary text-on-primary shadow-sm font-bold' : 'bg-white text-on-surface-variant border border-outline-variant hover:bg-surface-container-high'
+            ]">
+            Semua
+          </button>
+          <button
+            v-for="category in db.umkm_categories" :key="category.id"
+            @click="activeCategory = category.name"
+            :class="[
+              'whitespace-nowrap px-4 md:px-md py-2 rounded-full font-label-md transition-colors',
+              activeCategory === category.name ? 'bg-primary text-on-primary shadow-sm font-bold' : 'bg-white text-on-surface-variant border border-outline-variant hover:bg-surface-container-high'
+            ]">
+            {{ category.name }}
+          </button>
+        </div>
+
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
-        <article v-for="umkm in filteredUmkms" :key="umkm.id" class="bg-surface-container-lowest rounded-xl border border-outline-variant overflow-hidden hover:shadow-md transition-shadow group">
-          <div class="relative h-56 overflow-hidden">
+    </section>
+
+    <!-- 3. GRID UMKM -->
+    <section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+        <router-link
+          v-for="umkm in paginatedUmkms"
+          :key="umkm.id"
+          :to="`/umkm/${umkm.id}`"
+          class="bg-surface-container-lowest rounded-xl border border-outline-variant overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group flex flex-col cursor-pointer block"
+        >
+          <div class="relative h-48 md:h-56 overflow-hidden flex-shrink-0">
             <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" :alt="umkm.name" :src="umkm.product_image_path"/>
             <div class="absolute top-4 left-4">
               <span :class="['px-3 py-1 rounded-full text-label-sm font-bold shadow-sm', getCategoryStyle(umkm.umkm_category_id)]">
@@ -57,35 +67,59 @@
               </span>
             </div>
           </div>
-          <div class="p-md">
-            <h3 class="font-headline-sm text-headline-sm text-on-surface mb-xs">{{ umkm.name }}</h3>
-            <p class="font-body-sm text-body-sm text-on-surface-variant mb-md line-clamp-2">{{ umkm.description }}</p>
-            <div class="flex items-center justify-between mb-lg">
-              <span class="text-primary font-bold font-body-md">{{ umkm.price }}</span>
-            </div>
-            <div class="flex flex-col gap-sm">
-              <router-link :to="`/umkm/${umkm.id}`" class="flex items-center justify-center gap-2 py-3 bg-surface-container-high text-on-surface border border-outline-variant rounded-lg font-label-md hover:bg-surface-container-highest transition-colors w-full">
-                <span class="material-symbols-outlined text-[18px]">info</span> Lihat Detail
-              </router-link>
-              <div class="grid grid-cols-2 gap-sm">
-                <a :href="`https://wa.me/${umkm.whatsapp}`" target="_blank" class="flex items-center justify-center gap-2 py-3 bg-[#25D366] text-white rounded-lg font-label-md hover:opacity-90">
-                  <span class="material-symbols-outlined text-[18px]">chat</span> WhatsApp
-                </a>
-                <a :href="umkm.maps_url" target="_blank" class="flex items-center justify-center gap-2 py-3 border border-outline text-on-surface-variant rounded-lg font-label-md hover:bg-surface-container-low transition-colors">
-                  <span class="material-symbols-outlined text-[18px]">location_on</span> Lokasi
-                </a>
-              </div>
+
+          <!-- Area Konten -->
+          <div class="p-4 md:p-md flex flex-col flex-grow">
+            <h3 class="font-headline-sm font-bold text-on-surface mb-1 md:mb-xs group-hover:text-primary transition-colors">{{ umkm.name }}</h3>
+            <p class="font-body-sm text-on-surface-variant mb-4 md:mb-md line-clamp-2">{{ umkm.description }}</p>
+
+            <div class="flex items-center justify-between mt-auto pt-4 border-t border-outline-variant/40">
+              <span class="text-primary font-bold font-body-md">{{ umkm.price || 'Lihat Detail' }}</span>
+              <span class="material-symbols-outlined text-[20px] md:text-[24px] text-primary opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all">arrow_forward</span>
             </div>
           </div>
-        </article>
+        </router-link>
       </div>
-      <div v-if="filteredUmkms.length === 0" class="text-center py-xl">
-        <p class="font-body-lg text-on-surface-variant">Tidak ada UMKM yang ditemukan.</p>
+
+      <div v-if="filteredUmkms.length === 0" class="text-center py-12 md:py-xl">
+        <p class="font-body-md md:font-body-lg text-on-surface-variant">Tidak ada UMKM yang ditemukan.</p>
       </div>
-      <div class="mt-xl bg-primary rounded-2xl p-lg text-center text-on-primary">
-        <h2 class="font-headline-md text-headline-md mb-sm">Ingin UMKM Anda Terdaftar?</h2>
-        <p class="font-body-md text-body-md mb-lg opacity-90 max-w-xl mx-auto">Tingkatkan visibilitas bisnis lokal Anda dengan bergabung di platform katalog digital Pusaka Desa secara gratis.</p>
-        <router-link to="/kontak" class="inline-block px-lg py-3 bg-on-primary text-primary font-bold rounded-full hover:bg-primary-container hover:text-on-primary-container transition-all">
+
+      <!-- 4. PAGINATION -->
+      <div class="mt-8 md:mt-xl flex flex-col md:flex-row items-center justify-between gap-4 md:gap-md" v-if="filteredUmkms.length > 0">
+        <span class="font-body-sm text-on-surface-variant text-center md:text-left">
+          Menampilkan {{ (currentPage - 1) * itemsPerPage + 1 }}-{{ Math.min(currentPage * itemsPerPage, filteredUmkms.length) }} dari {{ filteredUmkms.length }} produk UMKM
+        </span>
+        <div class="flex items-center gap-2">
+          <button
+            @click="changePage(currentPage - 1)"
+            :disabled="currentPage === 1"
+            class="w-10 h-10 flex items-center justify-center rounded-full border border-outline-variant text-outline hover:bg-surface-container-high transition-colors disabled:opacity-50 cursor-pointer disabled:cursor-not-allowed">
+            <span class="material-symbols-outlined text-[20px]">chevron_left</span>
+          </button>
+          <button
+            v-for="page in totalPages" :key="page"
+            @click="changePage(page)"
+            :class="[
+              'w-10 h-10 flex items-center justify-center rounded-full font-label-md transition-colors',
+              currentPage === page ? 'bg-primary text-on-primary font-bold' : 'border border-outline-variant text-on-surface-variant hover:bg-surface-container-high'
+            ]">
+            {{ page }}
+          </button>
+          <button
+            @click="changePage(currentPage + 1)"
+            :disabled="currentPage === totalPages"
+            class="w-10 h-10 flex items-center justify-center rounded-full border border-outline-variant text-on-surface-variant hover:bg-surface-container-high transition-colors disabled:opacity-50 cursor-pointer disabled:cursor-not-allowed">
+            <span class="material-symbols-outlined text-[20px]">chevron_right</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- 5. CALL TO ACTION (CTA) BAWAH -->
+      <div class="mt-12 md:mt-xl bg-primary rounded-2xl p-6 md:p-lg text-center text-on-primary">
+        <h2 class="font-headline-md md:font-headline-lg font-bold mb-3 md:mb-sm">Ingin UMKM Anda Terdaftar?</h2>
+        <p class="font-body-sm md:font-body-md mb-6 md:mb-lg opacity-90 max-w-xl mx-auto">Tingkatkan visibilitas bisnis lokal Anda dengan bergabung di platform katalog digital Pusaka Desa secara gratis.</p>
+        <router-link to="/kontak" class="w-full sm:w-auto inline-block px-8 py-3 bg-on-primary text-primary font-bold rounded-full hover:bg-primary-container hover:text-on-primary-container transition-all">
           Daftar Sekarang
         </router-link>
       </div>
@@ -94,12 +128,15 @@
 </template>
 
 <script setup>
-import { ref, computed } from 'vue'
+import { ref, computed, watch } from 'vue'
 import { database } from '@/data/db.js'
 
 const db = ref(database)
 const searchQuery = ref('')
 const activeCategory = ref('Semua')
+
+const currentPage = ref(1)
+const itemsPerPage = 6
 
 const getCategoryName = (id) => {
     const cat = db.value.umkm_categories.find(c => c.id === id)
@@ -130,6 +167,25 @@ const filteredUmkms = computed(() => {
     }
 
     return result
+})
+
+const totalPages = computed(() => {
+    return Math.max(1, Math.ceil(filteredUmkms.value.length / itemsPerPage))
+})
+
+const paginatedUmkms = computed(() => {
+    const start = (currentPage.value - 1) * itemsPerPage
+    const end = start + itemsPerPage
+    return filteredUmkms.value.slice(start, end)
+})
+
+const changePage = (page) => {
+    currentPage.value = page
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+}
+
+watch([activeCategory, searchQuery], () => {
+    currentPage.value = 1
 })
 </script>
 

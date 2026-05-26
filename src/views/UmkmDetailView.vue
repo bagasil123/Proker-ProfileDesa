@@ -106,21 +106,19 @@
     </router-link>
   </div>
 
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
-    <article
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <router-link
       v-for="related in relatedProducts"
       :key="related.id"
-      class="bg-surface-container-lowest rounded-xl border border-outline-variant overflow-hidden hover:shadow-md transition-shadow group"
+      :to="`/umkm/${related.id}`"
+      class="bg-surface-container-lowest rounded-xl border border-outline-variant overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group flex flex-col cursor-pointer block"
     >
-      <div class="relative h-56 overflow-hidden">
-        <router-link :to="`/umkm/${related.id}`">
-          <img
-            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-            :alt="related.name"
-            :src="related.image"
-          />
-        </router-link>
-
+      <div class="relative h-56 overflow-hidden flex-shrink-0">
+        <img
+          class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+          :alt="related.name"
+          :src="related.image"
+        />
         <div class="absolute top-4 left-4">
           <span
             :class="[
@@ -133,49 +131,22 @@
         </div>
       </div>
 
-      <div class="p-md">
-        <h3 class="font-headline-sm text-headline-sm text-on-surface mb-xs">
+      <div class="p-md flex flex-col flex-grow">
+        <h3 class="font-headline-sm text-headline-sm text-on-surface mb-xs group-hover:text-primary transition-colors">
           {{ related.name }}
         </h3>
         <p class="font-body-sm text-body-sm text-on-surface-variant mb-md line-clamp-2">
           {{ related.description }}
         </p>
 
-        <div class="flex items-center justify-between mb-lg">
+        <div class="flex items-center justify-between mt-auto pt-4 border-t border-outline-variant/40">
           <span class="text-primary font-bold font-body-md">{{ related.price }}</span>
-        </div>
-
-        <div class="flex flex-col gap-sm">
-          <router-link
-            :to="`/umkm/${related.id}`"
-            class="flex items-center justify-center gap-2 py-3 bg-surface-container-high text-on-surface border border-outline-variant rounded-lg font-label-md hover:bg-surface-container-highest transition-colors w-full"
-          >
-            <span class="material-symbols-outlined text-[18px]">info</span>
-            Lihat Detail
-          </router-link>
-
-          <div class="grid grid-cols-2 gap-sm">
-            <a
-              :href="`https://wa.me/${related.whatsapp}`"
-              target="_blank"
-              class="flex items-center justify-center gap-2 py-3 bg-[#25D366] text-white rounded-lg font-label-md hover:opacity-90"
-            >
-              <span class="material-symbols-outlined text-[18px]">chat</span>
-              WhatsApp
-            </a>
-
-            <a
-              :href="related.maps_url"
-              target="_blank"
-              class="flex items-center justify-center gap-2 py-3 border border-outline text-on-surface-variant rounded-lg font-label-md hover:bg-surface-container-low transition-colors"
-            >
-              <span class="material-symbols-outlined text-[18px]">location_on</span>
-              Lokasi
-            </a>
-          </div>
+          <span class="material-symbols-outlined text-primary opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all">
+            arrow_forward
+          </span>
         </div>
       </div>
-    </article>
+    </router-link>
   </div>
 </section>
     </div>
@@ -199,6 +170,11 @@ const getCategoryName = (id) => {
     return cat ? cat.name : ''
 }
 
+const getCategoryStyle = (id) => {
+    const cat = db.value.umkm_categories.find(c => c.id === id)
+    return cat ? cat.style : ''
+}
+
 const product = computed(() => {
     const p = db.value.umkms.find(u => u.id == route.params.id) || db.value.umkms[0]
     return {
@@ -215,7 +191,8 @@ const relatedProducts = computed(() => {
         .map(u => ({
             ...u,
             image: u.product_image_path,
-            category: getCategoryName(u.umkm_category_id)
+            category: getCategoryName(u.umkm_category_id),
+            style: getCategoryStyle(u.umkm_category_id)
         }))
 })
 </script>
