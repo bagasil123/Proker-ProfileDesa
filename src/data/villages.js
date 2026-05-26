@@ -15,7 +15,7 @@ export const village_profiles = {
 };
 
 export const village_statistics = {
-    population_total: 4250,
+    population_total: 2500,
     population_male: 2100,
     population_female: 2150,
     dusun_count: 6,
