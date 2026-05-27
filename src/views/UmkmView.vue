@@ -14,7 +14,7 @@
     </header>
 
     <!-- 2. SEARCH & FILTER BAR -->
-    <section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mt-8 md:mt-lg mb-8 md:mb-lg">
+    <!-- <section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mt-8 md:mt-lg mb-8 md:mb-lg">
       <div class="flex flex-col md:flex-row gap-4 md:gap-gutter items-center justify-between bg-surface-container-low p-4 md:p-md rounded-xl border border-outline-variant">
 
         <div class="relative w-full md:w-1/3 group-focus-within:ring-2">
@@ -45,6 +45,69 @@
             ]">
             {{ category.name }}
           </button>
+        </div>
+
+      </div>
+    </section> -->
+
+    <section class="relative z-20 max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mt-6 md:mt-lg mb-6 md:mb-lg overflow-visible">
+      <div class="bg-surface-container-low p-4 md:p-md rounded-xl border border-outline-variant flex flex-col md:flex-row gap-4 md:gap-6 md:items-center">
+
+        <!-- Search -->
+        <div class="relative w-full md:flex-1">
+          <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline text-[20px] md:text-[24px]">
+            search
+          </span>
+          <input
+            v-model="searchQuery"
+            class="w-full pl-12 pr-4 py-3 bg-white border border-outline-variant rounded-full font-body-sm md:font-body-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all shadow-sm"
+            placeholder="Cari produk atau nama UMKM..."
+            type="text"
+          />
+        </div>
+
+        <!-- Filter -->
+        <div ref="dropdownRef" class="relative w-full md:w-48">
+          <button
+            type="button"
+            @click="toggleCategoryMenu"
+            class="w-full pl-12 pr-10 py-3 bg-white border border-outline-variant rounded-full font-body-sm md:font-body-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all shadow-sm text-left relative"
+          >
+            <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline text-[20px] md:text-[24px]">
+              filter_list
+            </span>
+            <span class="block truncate">{{ activeCategory }}</span>
+            <span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-outline text-[20px] md:text-[24px]">
+              expand_more
+            </span>
+          </button>
+
+          <transition name="fade">
+            <div
+              v-if="isCategoryMenuOpen"
+              class="absolute left-0 top-full mt-2 w-full bg-white border border-outline-variant rounded-2xl shadow-xl z-50 overflow-hidden"
+            >
+              <button
+                type="button"
+                @click="selectCategory('Semua')"
+                class="w-full text-left px-4 py-3 hover:bg-primary-container transition-colors"
+                :class="activeCategory === 'Semua' ? 'bg-primary text-on-primary font-bold' : 'text-on-surface'"
+              >
+                Semua Kategori
+              </button>
+
+              <button
+                v-for="category in db.umkm_categories"
+                :key="category.id"
+                type="button"
+                @click="selectCategory(category.name)"
+                class="w-full text-left px-4 py-3 hover:bg-primary-container transition-colors border-t border-outline-variant/30"
+                :class="activeCategory === category.name ? 'bg-primary text-on-primary font-bold' : 'text-on-surface'"
+              >
+                {{ category.name }}
+              </button>
+            </div>
+          </transition>
         </div>
 
       </div>
@@ -128,7 +191,7 @@
 </template>
 
 <script setup>
-import { ref, computed, watch } from 'vue'
+import { ref, computed, watch, onMounted, onBeforeUnmount } from 'vue'
 import { database } from '@/data/db.js'
 
 const db = ref(database)
@@ -138,57 +201,91 @@ const activeCategory = ref('Semua')
 const currentPage = ref(1)
 const itemsPerPage = 6
 
+const isCategoryMenuOpen = ref(false)
+const dropdownRef = ref(null)
+
 const getCategoryName = (id) => {
-    const cat = db.value.umkm_categories.find(c => c.id === id)
-    return cat ? cat.name : ''
+  const cat = db.value.umkm_categories.find(c => c.id === id)
+  return cat ? cat.name : ''
 }
 
 const getCategoryStyle = (id) => {
-    const cat = db.value.umkm_categories.find(c => c.id === id)
-    return cat ? cat.style : ''
+  const cat = db.value.umkm_categories.find(c => c.id === id)
+  return cat ? cat.style : ''
 }
 
+const toggleCategoryMenu = () => {
+  isCategoryMenuOpen.value = !isCategoryMenuOpen.value
+}
+
+const selectCategory = (category) => {
+  activeCategory.value = category
+  isCategoryMenuOpen.value = false
+}
+
+const handleClickOutside = (event) => {
+  if (dropdownRef.value && !dropdownRef.value.contains(event.target)) {
+    isCategoryMenuOpen.value = false
+  }
+}
+
+onMounted(() => {
+  document.addEventListener('click', handleClickOutside)
+})
+
+onBeforeUnmount(() => {
+  document.removeEventListener('click', handleClickOutside)
+})
+
 const filteredUmkms = computed(() => {
-    let result = db.value.umkms
+  let result = db.value.umkms
 
-    if (activeCategory.value !== 'Semua') {
-        const cat = db.value.umkm_categories.find(c => c.name === activeCategory.value)
-        if (cat) {
-            result = result.filter(u => u.umkm_category_id === cat.id)
-        }
+  if (activeCategory.value !== 'Semua') {
+    const cat = db.value.umkm_categories.find(c => c.name === activeCategory.value)
+    if (cat) {
+      result = result.filter(u => u.umkm_category_id === cat.id)
     }
+  }
 
-    if (searchQuery.value) {
-        const query = searchQuery.value.toLowerCase()
-        result = result.filter(u =>
-            u.name.toLowerCase().includes(query) ||
-            u.description.toLowerCase().includes(query)
-        )
-    }
+  if (searchQuery.value) {
+    const query = searchQuery.value.toLowerCase()
+    result = result.filter(u =>
+      u.name.toLowerCase().includes(query) ||
+      u.description.toLowerCase().includes(query)
+    )
+  }
 
-    return result
+  return result
 })
 
 const totalPages = computed(() => {
-    return Math.max(1, Math.ceil(filteredUmkms.value.length / itemsPerPage))
+  return Math.max(1, Math.ceil(filteredUmkms.value.length / itemsPerPage))
 })
 
 const paginatedUmkms = computed(() => {
-    const start = (currentPage.value - 1) * itemsPerPage
-    const end = start + itemsPerPage
-    return filteredUmkms.value.slice(start, end)
+  const start = (currentPage.value - 1) * itemsPerPage
+  const end = start + itemsPerPage
+  return filteredUmkms.value.slice(start, end)
 })
 
 const changePage = (page) => {
-    currentPage.value = page
-    window.scrollTo({ top: 0, behavior: 'smooth' })
+  currentPage.value = page
+  window.scrollTo({ top: 0, behavior: 'smooth' })
 }
 
 watch([activeCategory, searchQuery], () => {
-    currentPage.value = 1
+  currentPage.value = 1
 })
 </script>
 
 <style scoped>
-
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+  transform: translateY(-6px);
+}
 </style>

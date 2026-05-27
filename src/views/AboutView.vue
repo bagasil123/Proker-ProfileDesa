@@ -209,55 +209,55 @@
           <p class="text-on-surface-variant font-body-sm md:font-body-md">Gambaran Umum Demografi &amp; Geografi Desa</p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-md">
-          <div class="bg-surface-container p-6 md:p-xl rounded-2xl border border-outline-variant flex items-center gap-4 md:gap-6">
-            <div class="w-12 h-12 md:w-16 md:h-16 bg-primary rounded-full flex items-center justify-center text-on-primary flex-shrink-0">
+          <div class="bg-primary-container p-6 md:p-xl rounded-2xl border border-outline-variant flex items-center gap-4 md:gap-6">
+            <div class="w-12 h-12 md:w-16 md:h-16 bg-surface-container rounded-full flex items-center justify-center text-primary-container flex-shrink-0">
               <span class="material-symbols-outlined text-2xl md:text-3xl">square_foot</span>
             </div>
             <div>
-              <div class="text-on-surface-variant font-label-sm md:font-label-md">Luas Wilayah</div>
-              <div class="text-3xl md:text-display-lg font-bold text-primary">{{ formatNumber(db.village_statistics.area_ha) }}<span class="text-headline-sm"> Ha</span></div>
+              <div class="text-on-primary font-label-sm md:font-label-md">Luas Wilayah</div>
+              <div class="text-3xl md:text-display-lg font-bold text-on-primary">{{ formatNumber(db.village_statistics.area_ha) }}<span class="text-headline-sm"> Ha</span></div>
             </div>
           </div>
-          <div class="bg-surface-container p-6 md:p-xl rounded-2xl border border-outline-variant flex items-center gap-4 md:gap-6">
-            <div class="w-12 h-12 md:w-16 md:h-16 bg-secondary-container rounded-full flex items-center justify-center text-on-secondary-container flex-shrink-0">
+          <div class="bg-primary-container p-6 md:p-xl rounded-2xl border border-outline-variant flex items-center gap-4 md:gap-6">
+            <div class="w-12 h-12 md:w-16 md:h-16 bg-surface-container rounded-full flex items-center justify-center text-primary-container flex-shrink-0">
               <span class="material-symbols-outlined text-2xl md:text-3xl">groups</span>
             </div>
             <div>
-              <div class="text-on-surface-variant font-label-sm md:font-label-md">Jumlah Dusun</div>
-              <div class="text-3xl md:text-display-lg font-bold text-secondary">{{ db.village_statistics.dusun_count < 10 ? '0' + db.village_statistics.dusun_count : db.village_statistics.dusun_count }}<span class="text-headline-sm"> Dusun</span></div>
+              <div class="text-on-primary font-label-sm md:font-label-md">Jumlah Dusun</div>
+              <div class="text-3xl md:text-display-lg font-bold text-on-primary">{{ db.village_statistics.dusun_count < 10 ? '0' + db.village_statistics.dusun_count : db.village_statistics.dusun_count }}<span class="text-headline-sm"> Dusun</span></div>
             </div>
           </div>
-          <div class="bg-surface-container p-6 md:p-xl rounded-2xl border border-outline-variant flex items-center gap-4 md:gap-6">
-            <div class="w-12 h-12 md:w-16 md:h-16 bg-tertiary-container rounded-full flex items-center justify-center text-on-tertiary-container flex-shrink-0">
+          <div class="bg-primary-container p-6 md:p-xl rounded-2xl border border-outline-variant flex items-center gap-4 md:gap-6">
+            <div class="w-12 h-12 md:w-16 md:h-16 bg-surface-container rounded-full flex items-center justify-center text-primary-container flex-shrink-0">
               <span class="material-symbols-outlined text-2xl md:text-3xl">holiday_village</span>
             </div>
             <div>
-              <div class="text-on-surface-variant font-label-sm md:font-label-md">Total RT / RW</div>
-              <div class="text-3xl md:text-display-lg font-bold text-tertiary">{{ db.village_statistics.rt_count }} / {{ db.village_statistics.rw_count < 10 ? '0' + db.village_statistics.rw_count : db.village_statistics.rw_count }}</div>
+              <div class="text-on-primary font-label-sm md:font-label-md">Total RT / RW</div>
+              <div class="text-3xl md:text-display-lg font-bold text-on-primary">{{ db.village_statistics.rt_count }} / {{ db.village_statistics.rw_count < 10 ? '0' + db.village_statistics.rw_count : db.village_statistics.rw_count }}</div>
             </div>
           </div>
         </div>
 
-        <div class="mt-4 md:mt-md bg-white p-6 md:p-xl rounded-2xl border border-outline-variant shadow-sm flex flex-col md:flex-row items-center gap-6 md:gap-md text-center md:text-left">
+        <div class="mt-4 md:mt-md bg-primary-container p-6 md:p-xl rounded-2xl border border-outline-variant shadow-sm flex flex-col md:flex-row items-center gap-6 md:gap-md text-center md:text-left">
           <div class="w-full md:w-1/3">
-            <div class="text-4xl md:text-display-lg font-bold text-primary mb-1 md:mb-2">{{ formatNumber(db.village_statistics.population_total) }}</div>
-            <div class="text-headline-sm text-on-surface mb-1">Total Penduduk</div>
-            <p class="text-on-surface-variant font-body-sm">Data kependudukan terbaru.</p>
+            <div class="text-4xl md:text-display-lg font-bold text-on-primary mb-1 md:mb-2">{{ formatNumber(db.village_statistics.population_total) }}</div>
+            <div class="text-headline-sm text-on-primary mb-1">Total Penduduk</div>
+            <p class="text-on-primary font-body-sm">Data kependudukan terbaru.</p>
           </div>
           <div class="flex-1 w-full grid grid-cols-2 gap-3 md:gap-4">
-            <div class="p-3 md:p-4 bg-primary-fixed-dim rounded-xl">
-              <div class="flex items-center justify-center md:justify-start gap-1 md:gap-2 mb-2 text-on-primary-fixed">
+            <div class="p-3 md:p-4 bg-on-primary rounded-xl">
+              <div class="flex items-center justify-center md:justify-start gap-1 md:gap-2 mb-2 text-primary-container">
                 <span class="material-symbols-outlined text-[18px] md:text-xl">man</span>
                 <span class="font-bold text-sm md:text-base">Laki-laki</span>
               </div>
-              <div class="text-xl md:text-2xl font-bold">{{ formatNumber(db.village_statistics.population_male) }}</div>
+              <div class="text-xl text-primary-container md:text-2xl font-bold">{{ formatNumber(db.village_statistics.population_male) }}</div>
             </div>
-            <div class="p-3 md:p-4 bg-secondary-fixed-dim rounded-xl">
-              <div class="flex items-center justify-center md:justify-start gap-1 md:gap-2 mb-2 text-on-secondary-fixed">
+            <div class="p-3 md:p-4 bg-on-primary rounded-xl">
+              <div class="flex items-center justify-center md:justify-start gap-1 md:gap-2 mb-2 text-primary-container">
                 <span class="material-symbols-outlined text-[18px] md:text-xl">woman</span>
                 <span class="font-bold text-sm md:text-base">Perempuan</span>
               </div>
-              <div class="text-xl md:text-2xl font-bold">{{ formatNumber(db.village_statistics.population_female) }}</div>
+              <div class="text-xl text-primary-container md:text-2xl font-bold">{{ formatNumber(db.village_statistics.population_female) }}</div>
             </div>
           </div>
         </div>
