@@ -112,7 +112,6 @@
         <h4 class="font-label-md text-on-surface mb-6">Informasi Publik</h4>
         <ul class="space-y-4">
           <li><router-link @click="scrollToTop" class="font-body-sm text-on-surface-variant hover:text-primary underline-offset-4 hover:underline transition-all" to="/berita">Berita Terkini</router-link></li>
-          <li><router-link @click="scrollToTop" class="font-body-sm text-on-surface-variant hover:text-primary underline-offset-4 hover:underline transition-all" to="/berita">Transparansi Dana</router-link></li>
           <li><router-link @click="scrollToTop" class="font-body-sm text-on-surface-variant hover:text-primary underline-offset-4 hover:underline transition-all" to="/berita">Pengumuman</router-link></li>
           <li><router-link @click="scrollToTop" class="font-body-sm text-on-surface-variant hover:text-primary underline-offset-4 hover:underline transition-all" to="/kontak">Kontak Kami</router-link></li>
         </ul>
@@ -121,16 +120,6 @@
         <h4 class="font-label-md text-on-surface mb-6">Kontak Kantor</h4>
         <p class="font-body-sm text-on-surface-variant mb-2 whitespace-pre-wrap">{{ db.contact_infos.office_address }}</p>
         <p class="font-body-sm text-on-surface-variant mb-4">{{ db.contact_infos.phone }}</p>
-        <!-- <div class="h-32 w-full rounded-lg bg-surface-container-highest overflow-hidden border border-outline-variant">
-          <iframe
-            class="w-full h-full grayscale opacity-70 hover:opacity-100 hover:grayscale-0 transition-all duration-300"
-            style="border:0;"
-            loading="lazy"
-            allowfullscreen
-            referrerpolicy="no-referrer-when-downgrade"
-            :src="db.contact_infos.maps_embed_url">
-          </iframe>
-        </div> -->
       </div>
     </div>
     <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mt-xl pt-8 border-t border-outline-variant text-center">

@@ -32,8 +32,8 @@
       <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-md">
 
         <!-- Card 1: Penduduk -->
-        <div class="block p-4 md:p-lg bg-surface rounded-2xl shadow-lg border border-outline-variant text-center md:text-left flex flex-col items-center md:items-start">
-          <div class="w-10 h-10 md:w-12 md:h-12 bg-primary-fixed text-on-primary-fixed rounded-lg flex items-center justify-center mb-3 md:mb-4">
+        <div class="group block p-4 md:p-lg bg-surface rounded-2xl shadow-lg border border-outline-variant text-center md:text-left flex flex-col items-center md:items-start transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:border-primary/20 cursor-default">
+          <div class="w-10 h-10 md:w-12 md:h-12 bg-primary-fixed text-on-primary-fixed rounded-lg flex items-center justify-center mb-3 md:mb-4 transition-transform duration-300 group-hover:scale-110">
             <span class="material-symbols-outlined text-[20px] md:text-[24px]" style="font-variation-settings: 'FILL' 1;">groups</span>
           </div>
           <h3 class="font-bold text-2xl md:font-headline-lg text-primary">{{ formatNumber(db.village_statistics.population_total) }}+</h3>
@@ -41,8 +41,8 @@
         </div>
 
         <!-- Card 2: Produk UMKM -->
-        <div class="block p-4 md:p-lg bg-surface rounded-2xl shadow-lg border border-outline-variant text-center md:text-left flex flex-col items-center md:items-start">
-          <div class="w-10 h-10 md:w-12 md:h-12 bg-secondary-fixed text-on-secondary-fixed rounded-lg flex items-center justify-center mb-3 md:mb-4">
+        <div class="group block p-4 md:p-lg bg-surface rounded-2xl shadow-lg border border-outline-variant text-center md:text-left flex flex-col items-center md:items-start transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:border-primary/20 cursor-default">
+          <div class="w-10 h-10 md:w-12 md:h-12 bg-primary-fixed text-on-primary-fixed rounded-lg flex items-center justify-center mb-3 md:mb-4 transition-transform duration-300 group-hover:scale-110">
             <span class="material-symbols-outlined text-[20px] md:text-[24px]" style="font-variation-settings: 'FILL' 1;">storefront</span>
           </div>
           <h3 class="font-bold text-2xl md:font-headline-lg text-secondary">{{ db.aggregates.umkm_count }}+</h3>
@@ -50,8 +50,8 @@
         </div>
 
         <!-- Card 3: Fasilitas Umum -->
-        <div class="block p-4 md:p-lg bg-surface rounded-2xl shadow-lg border border-outline-variant text-center md:text-left flex flex-col items-center md:items-start">
-          <div class="w-10 h-10 md:w-12 md:h-12 bg-tertiary-fixed text-on-tertiary-fixed rounded-lg flex items-center justify-center mb-3 md:mb-4">
+        <div class="group block p-4 md:p-lg bg-surface rounded-2xl shadow-lg border border-outline-variant text-center md:text-left flex flex-col items-center md:items-start transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:border-primary/20 cursor-default">
+          <div class="w-10 h-10 md:w-12 md:h-12 bg-primary-fixed text-on-primary-fixed rounded-lg flex items-center justify-center mb-3 md:mb-4 transition-transform duration-300 group-hover:scale-110">
             <span class="material-symbols-outlined text-[20px] md:text-[24px]" style="font-variation-settings: 'FILL' 1;">home_health</span>
           </div>
           <h3 class="font-bold text-2xl md:font-headline-lg text-tertiary">{{ db.aggregates.facilities_count }}+</h3>
@@ -59,8 +59,8 @@
         </div>
 
         <!-- Card 4: Wilayah Desa -->
-        <div class="block p-4 md:p-lg bg-surface rounded-2xl shadow-lg border border-outline-variant text-center md:text-left flex flex-col items-center md:items-start">
-          <div class="w-10 h-10 md:w-12 md:h-12 bg-primary-fixed-dim text-on-primary-fixed-variant rounded-lg flex items-center justify-center mb-3 md:mb-4">
+        <div class="group block p-4 md:p-lg bg-surface rounded-2xl shadow-lg border border-outline-variant text-center md:text-left flex flex-col items-center md:items-start transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:border-primary/20 cursor-default">
+          <div class="w-10 h-10 md:w-12 md:h-12 bg-primary-fixed text-on-primary-fixed rounded-lg flex items-center justify-center mb-3 md:mb-4 transition-transform duration-300 group-hover:scale-110">
             <span class="material-symbols-outlined text-[20px] md:text-[24px]" style="font-variation-settings: 'FILL' 1;">map</span>
           </div>
           <h3 class="font-bold text-2xl md:font-headline-lg text-on-primary-fixed-variant">{{ db.village_statistics.area_ha }} Ha</h3>
