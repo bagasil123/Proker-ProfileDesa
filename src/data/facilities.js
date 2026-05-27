@@ -114,6 +114,24 @@ export const facilities = [
             { icon: "assignment", name: "Perizinan Desa", desc: "Penerbitan Surat Keterangan Usaha (SKU) & Surat Keterangan Tidak Mampu (SKTM)." },
             { icon: "meeting_room", name: "Sewa Aula", desc: "Penyewaan Aula Balai Desa untuk acara rapat, pernikahan, atau hajatan warga." }
         ],
+        gallery: [
+          {
+            src: "https://lh3.googleusercontent.com/aida-public/AB6AXuANgtlKTZST2h2pBAan9Hir2VwltRSOydUFTAKxJioGDs-yHYV9pcXuqx8PoqCH72Z9G2rOtB08l3io7EJtsHMtoRxpNf6sLZ5JOElgLhei7nKpEkgU9cwLrJiPjFLKMSXZ8hohPXMYmBJHZj6d79SN927MARTCpUv0Ur8TpN6CwzPku4S-PsxKAjyCGnKJzA3igHZLWyM-QUuDJg4ke7RB1sFnaKqPQ13k37l33Jt6prGzXcSQJ0WJhT6sbpXvE71gUt06PCONojc",
+            alt: "Tampak Depan Puskesmas"
+          },
+          {
+            src: "https://lh3.googleusercontent.com/aida-public/AB6AXuANgtlKTZST2h2pBAan9Hir2VwltRSOydUFTAKxJioGDs-yHYV9pcXuqx8PoqCH72Z9G2rOtB08l3io7EJtsHMtoRxpNf6sLZ5JOElgLhei7nKpEkgU9cwLrJiPjFLKMSXZ8hohPXMYmBJHZj6d79SN927MARTCpUv0Ur8TpN6CwzPku4S-PsxKAjyCGnKJzA3igHZLWyM-QUuDJg4ke7RB1sFnaKqPQ13k37l33Jt6prGzXcSQJ0WJhT6sbpXvE71gUt06PCONojc",
+            alt: "Ruang Tunggu Pasien"
+          },
+          {
+            src: "https://lh3.googleusercontent.com/aida-public/AB6AXuANgtlKTZST2h2pBAan9Hir2VwltRSOydUFTAKxJioGDs-yHYV9pcXuqx8PoqCH72Z9G2rOtB08l3io7EJtsHMtoRxpNf6sLZ5JOElgLhei7nKpEkgU9cwLrJiPjFLKMSXZ8hohPXMYmBJHZj6d79SN927MARTCpUv0Ur8TpN6CwzPku4S-PsxKAjyCGnKJzA3igHZLWyM-QUuDJg4ke7RB1sFnaKqPQ13k37l33Jt6prGzXcSQJ0WJhT6sbpXvE71gUt06PCONojc",
+            alt: "Fasilitas Apotek Desa"
+          },
+          {
+            src: "https://lh3.googleusercontent.com/aida-public/AB6AXuANgtlKTZST2h2pBAan9Hir2VwltRSOydUFTAKxJioGDs-yHYV9pcXuqx8PoqCH72Z9G2rOtB08l3io7EJtsHMtoRxpNf6sLZ5JOElgLhei7nKpEkgU9cwLrJiPjFLKMSXZ8hohPXMYmBJHZj6d79SN927MARTCpUv0Ur8TpN6CwzPku4S-PsxKAjyCGnKJzA3igHZLWyM-QUuDJg4ke7RB1sFnaKqPQ13k37l33Jt6prGzXcSQJ0WJhT6sbpXvE71gUt06PCONojc",
+            alt: "Ruang Rawat Inap"
+          }
+        ],
         faqs: [
             { question: "Apa saja syarat membuat pengantar SKCK?", answer: "Membawa Fotokopi KTP, Fotokopi KK, dan Surat Pengantar dari RT/RW setempat." },
             { question: "Apakah Aula Balai Desa bisa disewa untuk acara pernikahan?", answer: "Ya, aula dapat disewa untuk acara masyarakat. Silakan hubungi perangkat desa bagian Kaur Umum untuk penjadwalan dan informasi biaya retribusi." }
@@ -139,6 +157,32 @@ export const facilities = [
             { icon: "auto_stories", name: "TPA Anak", desc: "Taman Pendidikan Al-Qur'an (TPA) rutin untuk anak-anak desa." },
             { icon: "diversity_3", name: "Majelis Taklim", desc: "Pengajian rutin tafsir dan fiqih untuk bapak-bapak dan ibu-ibu." },
             { icon: "volunteer_activism", name: "Lembaga Amil", desc: "Pusat penyaluran Zakat, Infaq, dan Shadaqah (ZIS) desa." }
+        ],
+        gallery: [
+          {
+            src: "https://lh3.googleusercontent.com/aida-public/AB6AXuANgtlKTZST2h2pBAan9Hir2VwltRSOydUFTAKxJioGDs-yHYV9pcXuqx8PoqCH72Z9G2rOtB08l3io7EJtsHMtoRxpNf6sLZ5JOElgLhei7nKpEkgU9cwLrJiPjFLKMSXZ8hohPXMYmBJHZj6d79SN927MARTCpUv0Ur8TpN6CwzPku4S-PsxKAjyCGnKJzA3igHZLWyM-QUuDJg4ke7RB1sFnaKqPQ13k37l33Jt6prGzXcSQJ0WJhT6sbpXvE71gUt06PCONojc",
+            alt: "Tampak Depan Puskesmas"
+          },
+          {
+            src: "https://lh3.googleusercontent.com/aida-public/AB6AXuANgtlKTZST2h2pBAan9Hir2VwltRSOydUFTAKxJioGDs-yHYV9pcXuqx8PoqCH72Z9G2rOtB08l3io7EJtsHMtoRxpNf6sLZ5JOElgLhei7nKpEkgU9cwLrJiPjFLKMSXZ8hohPXMYmBJHZj6d79SN927MARTCpUv0Ur8TpN6CwzPku4S-PsxKAjyCGnKJzA3igHZLWyM-QUuDJg4ke7RB1sFnaKqPQ13k37l33Jt6prGzXcSQJ0WJhT6sbpXvE71gUt06PCONojc",
+            alt: "Ruang Tunggu Pasien"
+          },
+          {
+            src: "https://lh3.googleusercontent.com/aida-public/AB6AXuANgtlKTZST2h2pBAan9Hir2VwltRSOydUFTAKxJioGDs-yHYV9pcXuqx8PoqCH72Z9G2rOtB08l3io7EJtsHMtoRxpNf6sLZ5JOElgLhei7nKpEkgU9cwLrJiPjFLKMSXZ8hohPXMYmBJHZj6d79SN927MARTCpUv0Ur8TpN6CwzPku4S-PsxKAjyCGnKJzA3igHZLWyM-QUuDJg4ke7RB1sFnaKqPQ13k37l33Jt6prGzXcSQJ0WJhT6sbpXvE71gUt06PCONojc",
+            alt: "Fasilitas Apotek Desa"
+          },
+          {
+            src: "https://lh3.googleusercontent.com/aida-public/AB6AXuANgtlKTZST2h2pBAan9Hir2VwltRSOydUFTAKxJioGDs-yHYV9pcXuqx8PoqCH72Z9G2rOtB08l3io7EJtsHMtoRxpNf6sLZ5JOElgLhei7nKpEkgU9cwLrJiPjFLKMSXZ8hohPXMYmBJHZj6d79SN927MARTCpUv0Ur8TpN6CwzPku4S-PsxKAjyCGnKJzA3igHZLWyM-QUuDJg4ke7RB1sFnaKqPQ13k37l33Jt6prGzXcSQJ0WJhT6sbpXvE71gUt06PCONojc",
+            alt: "Ruang Rawat Inap"
+          },
+          {
+            src: "https://lh3.googleusercontent.com/aida-public/AB6AXuANgtlKTZST2h2pBAan9Hir2VwltRSOydUFTAKxJioGDs-yHYV9pcXuqx8PoqCH72Z9G2rOtB08l3io7EJtsHMtoRxpNf6sLZ5JOElgLhei7nKpEkgU9cwLrJiPjFLKMSXZ8hohPXMYmBJHZj6d79SN927MARTCpUv0Ur8TpN6CwzPku4S-PsxKAjyCGnKJzA3igHZLWyM-QUuDJg4ke7RB1sFnaKqPQ13k37l33Jt6prGzXcSQJ0WJhT6sbpXvE71gUt06PCONojc",
+            alt: "Ruang Rawat Inap"
+          },
+          {
+            src: "https://lh3.googleusercontent.com/aida-public/AB6AXuANgtlKTZST2h2pBAan9Hir2VwltRSOydUFTAKxJioGDs-yHYV9pcXuqx8PoqCH72Z9G2rOtB08l3io7EJtsHMtoRxpNf6sLZ5JOElgLhei7nKpEkgU9cwLrJiPjFLKMSXZ8hohPXMYmBJHZj6d79SN927MARTCpUv0Ur8TpN6CwzPku4S-PsxKAjyCGnKJzA3igHZLWyM-QUuDJg4ke7RB1sFnaKqPQ13k37l33Jt6prGzXcSQJ0WJhT6sbpXvE71gUt06PCONojc",
+            alt: "Ruang Rawat Inap"
+          }
         ],
         faqs: [
             { question: "Kapan jadwal TPA untuk anak-anak?", answer: "TPA dilaksanakan setiap hari Senin hingga Jumat, mulai pukul 15.30 hingga 17.00 WIB." },
