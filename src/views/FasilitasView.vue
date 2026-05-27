@@ -82,48 +82,8 @@
       </div>
     </section>
 
-    <!-- 3. LAYANAN ADMINISTRASI -->
-    <section class="py-12 md:py-xl bg-surface-container-low">
-      <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
-        <div class="flex flex-col lg:flex-row gap-8 lg:gap-xl items-center">
-          <div class="lg:w-1/2 text-center md:text-left">
-            <h2 class="text-2xl font-headline-md md:font-headline-lg font-bold text-on-surface mb-3 md:mb-md">Layanan Administrasi Desa</h2>
-            <p class="font-body-sm md:font-body-lg text-on-surface-variant mb-6 md:mb-lg">
-              Kami berkomitmen memberikan pelayanan administrasi yang cepat, tepat, dan tanpa pungutan liar. Simak panduan pengurusan dokumen berikut:
-            </p>
-            <div class="space-y-3 md:space-y-md text-left">
-              <div v-for="service in db.administrative_services" :key="service.id" class="flex gap-4 md:gap-md p-4 md:p-md bg-surface-container-lowest rounded-xl border border-outline-variant shadow-sm hover:shadow-md transition-shadow">
-                <div :class="['w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-lg shrink-0', service.color_class]">
-                  <span class="material-symbols-outlined text-[20px] md:text-[24px]">{{ service.icon }}</span>
-                </div>
-                <div>
-                  <h4 class="font-headline-sm text-sm md:text-headline-sm font-bold text-on-surface mb-1">{{ service.title }}</h4>
-                  <p class="font-body-sm text-on-surface-variant">{{ service.description }}</p>
-                </div>
-              </div>
-            </div>
-            <div class="mt-6 md:mt-lg">
-              <button class="bg-primary text-on-primary w-full md:w-auto px-6 py-3 md:py-sm rounded-lg font-label-md font-bold hover:opacity-90 transition-opacity">
-                Pelajari Selengkapnya
-              </button>
-            </div>
-          </div>
-          <div class="lg:w-1/2 w-full mt-4 md:mt-0">
-            <div class="relative rounded-2xl overflow-hidden shadow-xl aspect-square md:aspect-video lg:aspect-square">
-              <img class="w-full h-full object-cover" alt="Pelayanan Administrasi" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3zjAQDhx4-rZgtD-RYPzAj9fn5UMpnnCrg43pPnNd6S13x9nvwDP05OUGfLLJ0m7237XYwWRtDwthKCyAIajVjThDN9UxZbWMkDxZRp1m94lGbWEssKluoR2BEmQv70_3EaF3x5GhO68nd_uY46QlOgKVNKErXCOkpe_8c2g9QrzfoVvZU6yXUoOV_QzluYcsJHDoHYP6xNy280p_p_QHAsDQCFKtA5iaTPh1b7Ky5_1P0F9nNU65rGrtJXO7AS6YC1IjTCisfL8"/>
-              <div class="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent"></div>
-              <div class="absolute bottom-4 left-4 md:bottom-6 md:left-6 text-on-primary">
-                <p class="font-headline-sm text-base md:text-headline-sm font-bold mb-1 italic">"Melayani dengan Hati, Membangun dengan Dedikasi"</p>
-                <p class="text-label-sm opacity-80">Pelayanan Terpadu Satu Pintu {{ db.villages.name }}</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 4. CALL TO ACTION PENGADUAN -->
-    <section class="py-12 md:py-xl">
+    <!-- 3. CALL TO ACTION PENGADUAN -->
+    <section class="pt-6 pb-12 md:pt-lg md:pb-xl">
       <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
         <div class="bg-primary rounded-[2rem] p-6 md:p-xl text-center text-on-primary relative overflow-hidden shadow-lg">
           <div class="absolute -top-12 -right-12 w-32 h-32 md:w-48 md:h-48 bg-on-primary/10 rounded-full blur-2xl md:blur-3xl"></div>
