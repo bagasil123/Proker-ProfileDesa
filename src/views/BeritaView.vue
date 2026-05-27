@@ -14,10 +14,13 @@
 
     <!-- 2. SEARCH & FILTER BAR -->
     <section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-8 md:mb-lg">
-      <div class="flex flex-col md:flex-row gap-4 md:gap-gutter items-center justify-between bg-surface-container-low p-4 md:p-md rounded-xl border border-outline-variant">
+      <div class="bg-surface-container-low p-4 md:p-md rounded-xl border border-outline-variant flex flex-col md:flex-row gap-4 md:gap-6 md:items-center">
 
-        <div class="relative w-full md:w-1/3 group-focus-within:ring-2">
-          <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline text-[20px] md:text-[24px]">search</span>
+        <!-- Search -->
+        <div class="relative w-full md:flex-1">
+          <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline text-[20px] md:text-[24px]">
+            search
+          </span>
           <input
             v-model="searchQuery"
             class="w-full pl-12 pr-4 py-3 bg-white border border-outline-variant rounded-full font-body-sm md:font-body-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all shadow-sm"
@@ -26,25 +29,48 @@
           />
         </div>
 
-        <!-- Filter Kategori -->
-        <div class="flex gap-2 overflow-x-auto w-full md:w-auto mt-2 md:mt-0 pb-2 md:pb-0 scrollbar-hide">
+        <!-- Filter -->
+        <div ref="dropdownRef" class="relative w-full md:w-48">
           <button
-            @click="activeCategory = 'Semua'"
-            :class="[
-              'whitespace-nowrap px-4 md:px-md py-2 rounded-full font-label-md transition-colors',
-              activeCategory === 'Semua' ? 'bg-primary text-on-primary font-bold shadow-sm' : 'bg-white text-on-surface-variant border border-outline-variant hover:bg-surface-container-high'
-            ]">
-            Semua
+            type="button"
+            @click="toggleCategoryMenu"
+            class="w-full pl-12 pr-10 py-3 bg-white border border-outline-variant rounded-full font-body-sm md:font-body-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all shadow-sm text-left relative"
+          >
+            <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline text-[20px] md:text-[24px]">
+              filter_list
+            </span>
+            <span class="block truncate">{{ activeCategory }}</span>
+            <span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-outline text-[20px] md:text-[24px]">
+              expand_more
+            </span>
           </button>
-          <button
-            v-for="category in categories" :key="category"
-            @click="activeCategory = category"
-            :class="[
-              'whitespace-nowrap px-4 md:px-md py-2 rounded-full font-label-md transition-colors',
-              activeCategory === category ? 'bg-primary text-on-primary font-bold shadow-sm' : 'bg-white text-on-surface-variant border border-outline-variant hover:bg-surface-container-high'
-            ]">
-            {{ category }}
-          </button>
+
+          <transition name="fade">
+            <div
+              v-if="isCategoryMenuOpen"
+              class="absolute left-0 top-full mt-2 w-full bg-white border border-outline-variant rounded-2xl shadow-xl z-50 overflow-hidden"
+            >
+              <button
+                type="button"
+                @click="selectCategory('Semua')"
+                class="w-full text-left px-4 py-3 hover:bg-primary-container transition-colors"
+                :class="activeCategory === 'Semua' ? 'bg-primary text-on-primary font-bold' : 'text-on-surface'"
+              >
+                Semua
+              </button>
+
+              <button
+                v-for="category in categories"
+                :key="category"
+                type="button"
+                @click="selectCategory(category)"
+                class="w-full text-left px-4 py-3 hover:bg-primary-container transition-colors border-t border-outline-variant/30"
+                :class="activeCategory === category ? 'bg-primary text-on-primary font-bold' : 'text-on-surface'"
+              >
+                {{ category }}
+              </button>
+            </div>
+          </transition>
         </div>
 
       </div>
@@ -149,7 +175,7 @@
 </template>
 
 <script setup>
-import { ref, computed, watch } from 'vue'
+import { ref, computed, watch, onMounted, onBeforeUnmount } from 'vue'
 import { database } from '@/data/db.js'
 
 const db = ref(database)
@@ -159,65 +185,108 @@ const activeCategory = ref('Semua')
 const currentPage = ref(1)
 const itemsPerPage = 6
 
-const categories = ['Pengumuman', 'Kegiatan Desa', 'Ekonomi', 'Kesehatan']
+const isCategoryMenuOpen = ref(false)
+const dropdownRef = ref(null)
+
+const categories = computed(() => {
+  const uniqueCategories = [...new Set(
+    db.value.news_posts
+      .map(news => news.category)
+      .filter(Boolean)
+  )]
+  return uniqueCategories
+})
+
+const toggleCategoryMenu = () => {
+  isCategoryMenuOpen.value = !isCategoryMenuOpen.value
+}
+
+const selectCategory = (category) => {
+  activeCategory.value = category
+  isCategoryMenuOpen.value = false
+}
+
+const handleClickOutside = (event) => {
+  if (dropdownRef.value && !dropdownRef.value.contains(event.target)) {
+    isCategoryMenuOpen.value = false
+  }
+}
+
+onMounted(() => {
+  document.addEventListener('click', handleClickOutside)
+})
+
+onBeforeUnmount(() => {
+  document.removeEventListener('click', handleClickOutside)
+})
 
 const sortedNews = computed(() => {
-    return [...db.value.news_posts].sort((a, b) => new Date(b.published_at) - new Date(a.published_at))
+  return [...db.value.news_posts].sort((a, b) => new Date(b.published_at) - new Date(a.published_at))
 })
 
 const featuredNews = computed(() => {
-    return sortedNews.value[0]
+  return sortedNews.value[0]
 })
 
 const filteredNews = computed(() => {
-    let result = sortedNews.value.slice(1)
+  let result = sortedNews.value.slice(1)
 
-    if (activeCategory.value !== 'Semua') {
-        result = result.filter(news => news.category === activeCategory.value)
-    }
+  if (activeCategory.value !== 'Semua') {
+    result = result.filter(news => news.category === activeCategory.value)
+  }
 
-    if (searchQuery.value) {
-        const query = searchQuery.value.toLowerCase()
-        result = db.value.news_posts.filter(news =>
-            news.title.toLowerCase().includes(query) ||
-            news.excerpt.toLowerCase().includes(query)
-        )
-    }
+  if (searchQuery.value) {
+    const query = searchQuery.value.toLowerCase()
+    result = result.filter(news =>
+      news.title.toLowerCase().includes(query) ||
+      news.excerpt.toLowerCase().includes(query)
+    )
+  }
 
-    return result
+  return result
 })
 
 const totalPages = computed(() => {
-    return Math.max(1, Math.ceil(filteredNews.value.length / itemsPerPage))
+  return Math.max(1, Math.ceil(filteredNews.value.length / itemsPerPage))
 })
 
 const paginatedNews = computed(() => {
-    const start = (currentPage.value - 1) * itemsPerPage
-    const end = start + itemsPerPage
-    return filteredNews.value.slice(start, end)
+  const start = (currentPage.value - 1) * itemsPerPage
+  const end = start + itemsPerPage
+  return filteredNews.value.slice(start, end)
 })
 
 const changePage = (page) => {
-    currentPage.value = page
-    window.scrollTo({ top: 0, behavior: 'smooth' })
+  currentPage.value = page
+  window.scrollTo({ top: 0, behavior: 'smooth' })
 }
 
-watch(() => filteredNews.value, () => {
-    currentPage.value = 1
+watch([activeCategory, searchQuery], () => {
+  currentPage.value = 1
 })
 
 const formatDate = (dateString) => {
-    const options = { year: 'numeric', month: 'long', day: 'numeric' }
-    return new Date(dateString).toLocaleDateString('id-ID', options)
+  const options = { year: 'numeric', month: 'long', day: 'numeric' }
+  return new Date(dateString).toLocaleDateString('id-ID', options)
 }
 </script>
 
 <style scoped>
 .scrollbar-hide::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 .scrollbar-hide {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+  transform: translateY(-6px);
 }
 </style>

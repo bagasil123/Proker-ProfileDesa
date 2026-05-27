@@ -19,6 +19,24 @@ export const facilities = [
             { icon: "sports_soccer", name: "Ekstrakurikuler", desc: "Berbagai kegiatan seperti Pramuka, Kesenian, dan Olahraga." },
             { icon: "local_library", name: "Perpustakaan", desc: "Fasilitas perpustakaan sekolah lengkap dengan program literasi harian." }
         ],
+        gallery: [
+          {
+            src: "https://lh3.googleusercontent.com/aida-public/AB6AXuANgtlKTZST2h2pBAan9Hir2VwltRSOydUFTAKxJioGDs-yHYV9pcXuqx8PoqCH72Z9G2rOtB08l3io7EJtsHMtoRxpNf6sLZ5JOElgLhei7nKpEkgU9cwLrJiPjFLKMSXZ8hohPXMYmBJHZj6d79SN927MARTCpUv0Ur8TpN6CwzPku4S-PsxKAjyCGnKJzA3igHZLWyM-QUuDJg4ke7RB1sFnaKqPQ13k37l33Jt6prGzXcSQJ0WJhT6sbpXvE71gUt06PCONojc",
+            alt: "Tampak Depan Puskesmas"
+          },
+          {
+            src: "https://lh3.googleusercontent.com/aida-public/AB6AXuANgtlKTZST2h2pBAan9Hir2VwltRSOydUFTAKxJioGDs-yHYV9pcXuqx8PoqCH72Z9G2rOtB08l3io7EJtsHMtoRxpNf6sLZ5JOElgLhei7nKpEkgU9cwLrJiPjFLKMSXZ8hohPXMYmBJHZj6d79SN927MARTCpUv0Ur8TpN6CwzPku4S-PsxKAjyCGnKJzA3igHZLWyM-QUuDJg4ke7RB1sFnaKqPQ13k37l33Jt6prGzXcSQJ0WJhT6sbpXvE71gUt06PCONojc",
+            alt: "Ruang Tunggu Pasien"
+          },
+          {
+            src: "https://lh3.googleusercontent.com/aida-public/AB6AXuANgtlKTZST2h2pBAan9Hir2VwltRSOydUFTAKxJioGDs-yHYV9pcXuqx8PoqCH72Z9G2rOtB08l3io7EJtsHMtoRxpNf6sLZ5JOElgLhei7nKpEkgU9cwLrJiPjFLKMSXZ8hohPXMYmBJHZj6d79SN927MARTCpUv0Ur8TpN6CwzPku4S-PsxKAjyCGnKJzA3igHZLWyM-QUuDJg4ke7RB1sFnaKqPQ13k37l33Jt6prGzXcSQJ0WJhT6sbpXvE71gUt06PCONojc",
+            alt: "Fasilitas Apotek Desa"
+          },
+          {
+            src: "https://lh3.googleusercontent.com/aida-public/AB6AXuANgtlKTZST2h2pBAan9Hir2VwltRSOydUFTAKxJioGDs-yHYV9pcXuqx8PoqCH72Z9G2rOtB08l3io7EJtsHMtoRxpNf6sLZ5JOElgLhei7nKpEkgU9cwLrJiPjFLKMSXZ8hohPXMYmBJHZj6d79SN927MARTCpUv0Ur8TpN6CwzPku4S-PsxKAjyCGnKJzA3igHZLWyM-QUuDJg4ke7RB1sFnaKqPQ13k37l33Jt6prGzXcSQJ0WJhT6sbpXvE71gUt06PCONojc",
+            alt: "Ruang Rawat Inap"
+          }
+        ],
         faqs: [
             { question: "Bagaimana cara mendaftar peserta didik baru?", answer: "Pendaftaran peserta didik baru biasanya dibuka pada bulan Juni. Silakan datang langsung ke sekolah dengan membawa fotokopi Akta Kelahiran dan Kartu Keluarga." },
             { question: "Apakah ada biaya SPP?", answer: "Sesuai dengan program pemerintah, pendidikan di SDN 01 Pusaka Desa bebas biaya (gratis)." }
@@ -44,6 +62,32 @@ export const facilities = [
             { icon: "baby_changing_station", name: "KIA & KB", desc: "Kesehatan Ibu dan Anak, imunisasi, dan program keluarga berencana." },
             { icon: "vaccines", name: "Imunisasi Anak", desc: "Layanan posyandu dan jadwal rutin imunisasi lengkap untuk bayi." },
             { icon: "emergency", name: "IGD 24 Jam", desc: "Penanganan gawat darurat ringan bersiaga penuh 24 jam sehari." }
+        ],
+        gallery: [
+          {
+            src: "https://lh3.googleusercontent.com/aida-public/AB6AXuBUDSvvumL_RzpjICX3LOI7Q75R3MtkZyuVe2SzQpxNXmwSGErzF3br-ixlTySgqNVazK34yb5zH1DoZm1omfumqZg0pkqH0dp93L4AEGwoboQurJaYzmqQVeDqv0wZqkpST8UNZsZu6XtvFCCaG6LVkRTM9ZCltqzQSvReSMOUnQU1CwcQY-UwKh1QW5Gy0iOq1Nu7jwHc0yjI1amxvfqhiffuW47IY17DyAcbJDmM9YUk5C_sK9DfzRWUlY3smjrla8mxjx2W-TU",
+            alt: "Tampak Depan Puskesmas"
+          },
+          {
+            src: "https://lh3.googleusercontent.com/aida-public/AB6AXuBUDSvvumL_RzpjICX3LOI7Q75R3MtkZyuVe2SzQpxNXmwSGErzF3br-ixlTySgqNVazK34yb5zH1DoZm1omfumqZg0pkqH0dp93L4AEGwoboQurJaYzmqQVeDqv0wZqkpST8UNZsZu6XtvFCCaG6LVkRTM9ZCltqzQSvReSMOUnQU1CwcQY-UwKh1QW5Gy0iOq1Nu7jwHc0yjI1amxvfqhiffuW47IY17DyAcbJDmM9YUk5C_sK9DfzRWUlY3smjrla8mxjx2W-TU",
+            alt: "Ruang Tunggu Pasien"
+          },
+          {
+            src: "https://lh3.googleusercontent.com/aida-public/AB6AXuBUDSvvumL_RzpjICX3LOI7Q75R3MtkZyuVe2SzQpxNXmwSGErzF3br-ixlTySgqNVazK34yb5zH1DoZm1omfumqZg0pkqH0dp93L4AEGwoboQurJaYzmqQVeDqv0wZqkpST8UNZsZu6XtvFCCaG6LVkRTM9ZCltqzQSvReSMOUnQU1CwcQY-UwKh1QW5Gy0iOq1Nu7jwHc0yjI1amxvfqhiffuW47IY17DyAcbJDmM9YUk5C_sK9DfzRWUlY3smjrla8mxjx2W-TU",
+            alt: "Fasilitas Apotek Desa"
+          },
+          {
+            src: "https://lh3.googleusercontent.com/aida-public/AB6AXuBUDSvvumL_RzpjICX3LOI7Q75R3MtkZyuVe2SzQpxNXmwSGErzF3br-ixlTySgqNVazK34yb5zH1DoZm1omfumqZg0pkqH0dp93L4AEGwoboQurJaYzmqQVeDqv0wZqkpST8UNZsZu6XtvFCCaG6LVkRTM9ZCltqzQSvReSMOUnQU1CwcQY-UwKh1QW5Gy0iOq1Nu7jwHc0yjI1amxvfqhiffuW47IY17DyAcbJDmM9YUk5C_sK9DfzRWUlY3smjrla8mxjx2W-TU",
+            alt: "Ruang Rawat Inap"
+          },
+          {
+            src: "https://lh3.googleusercontent.com/aida-public/AB6AXuBUDSvvumL_RzpjICX3LOI7Q75R3MtkZyuVe2SzQpxNXmwSGErzF3br-ixlTySgqNVazK34yb5zH1DoZm1omfumqZg0pkqH0dp93L4AEGwoboQurJaYzmqQVeDqv0wZqkpST8UNZsZu6XtvFCCaG6LVkRTM9ZCltqzQSvReSMOUnQU1CwcQY-UwKh1QW5Gy0iOq1Nu7jwHc0yjI1amxvfqhiffuW47IY17DyAcbJDmM9YUk5C_sK9DfzRWUlY3smjrla8mxjx2W-TU",
+            alt: "Ruang Rawat Inap"
+          },
+          {
+            src: "https://lh3.googleusercontent.com/aida-public/AB6AXuBUDSvvumL_RzpjICX3LOI7Q75R3MtkZyuVe2SzQpxNXmwSGErzF3br-ixlTySgqNVazK34yb5zH1DoZm1omfumqZg0pkqH0dp93L4AEGwoboQurJaYzmqQVeDqv0wZqkpST8UNZsZu6XtvFCCaG6LVkRTM9ZCltqzQSvReSMOUnQU1CwcQY-UwKh1QW5Gy0iOq1Nu7jwHc0yjI1amxvfqhiffuW47IY17DyAcbJDmM9YUk5C_sK9DfzRWUlY3smjrla8mxjx2W-TU",
+            alt: "Ruang Rawat Inap"
+          }
         ],
         faqs: [
             { question: "Apakah melayani pasien BPJS?", answer: "Ya, kami melayani pasien umum dan pasien yang menggunakan kartu BPJS Kesehatan." },
