@@ -101,7 +101,7 @@
     <!-- 3. PETA MAPS -->
     <section class="pb-12 md:pb-xl">
       <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
-        <div class="w-full h-[300px] md:h-[400px] rounded-xl overflow-hidden shadow-sm relative group grayscale-0 md:grayscale hover:grayscale-0 transition-all duration-700">
+        <div class="w-full h-[300px] md:h-[400px] rounded-xl overflow-hidden shadow-sm relative group transition-all duration-700">
           <iframe
             class="w-full h-full"
             style="border:0;"
@@ -116,7 +116,7 @@
               <span class="material-symbols-outlined text-[20px] md:text-2xl text-primary">pin_drop</span>
             </div>
             <div>
-              <p class="font-label-md font-bold text-on-surface">Kantor Desa Pusaka</p>
+              <p class="font-label-md font-bold text-on-surface">Kantor Desa Cianten</p>
               <p class="font-body-sm text-on-surface-variant">Navigasi Peta Interaktif</p>
             </div>
           </div>

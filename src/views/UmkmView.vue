@@ -13,43 +13,6 @@
       <div class="absolute top-0 right-0 -translate-y-1/2 translate-x-1/4 w-[600px] h-[600px] bg-primary/5 rounded-full blur-3xl pointer-events-none"></div>
     </header>
 
-    <!-- 2. SEARCH & FILTER BAR -->
-    <!-- <section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mt-8 md:mt-lg mb-8 md:mb-lg">
-      <div class="flex flex-col md:flex-row gap-4 md:gap-gutter items-center justify-between bg-surface-container-low p-4 md:p-md rounded-xl border border-outline-variant">
-
-        <div class="relative w-full md:w-1/3 group-focus-within:ring-2">
-          <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline text-[20px] md:text-[24px]">search</span>
-          <input
-            v-model="searchQuery"
-            class="w-full pl-12 pr-4 py-3 bg-white border border-outline-variant rounded-full font-body-sm md:font-body-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all shadow-sm"
-            placeholder="Cari produk atau nama UMKM..."
-            type="text"
-          />
-        </div>
-
-        <div class="flex gap-2 overflow-x-auto w-full md:w-auto mt-2 md:mt-0 pb-2 md:pb-0 scrollbar-hide">
-          <button
-            @click="activeCategory = 'Semua'"
-            :class="[
-              'whitespace-nowrap px-4 md:px-md py-2 rounded-full font-label-md transition-colors',
-              activeCategory === 'Semua' ? 'bg-primary text-on-primary shadow-sm font-bold' : 'bg-white text-on-surface-variant border border-outline-variant hover:bg-surface-container-high'
-            ]">
-            Semua
-          </button>
-          <button
-            v-for="category in db.umkm_categories" :key="category.id"
-            @click="activeCategory = category.name"
-            :class="[
-              'whitespace-nowrap px-4 md:px-md py-2 rounded-full font-label-md transition-colors',
-              activeCategory === category.name ? 'bg-primary text-on-primary shadow-sm font-bold' : 'bg-white text-on-surface-variant border border-outline-variant hover:bg-surface-container-high'
-            ]">
-            {{ category.name }}
-          </button>
-        </div>
-
-      </div>
-    </section> -->
-
     <section class="relative z-20 max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mt-6 md:mt-lg mb-6 md:mb-lg overflow-visible">
       <div class="bg-surface-container-low p-4 md:p-md rounded-xl border border-outline-variant flex flex-col md:flex-row gap-4 md:gap-6 md:items-center">
 

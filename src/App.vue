@@ -88,19 +88,21 @@
           Mewujudkan desa digital yang mandiri, transparan, dan menjunjung tinggi warisan luhur budaya nusantara.
         </p>
         <div class="flex items-center gap-4">
-          <a :href="db.contact_infos.facebook_url" target="_blank" class="text-on-surface-variant hover:text-primary transition-all">
-            <span class="material-symbols-outlined">social_leaderboard</span>
+          <a :href="db.contact_infos.facebook_url" target="_blank">
+            <Facebook class="w-5 h-5" />
           </a>
-          <a :href="db.contact_infos.instagram_url" target="_blank" class="text-on-surface-variant hover:text-primary transition-all">
-            <span class="material-symbols-outlined">public</span>
+
+          <a :href="db.contact_infos.instagram_url" target="_blank">
+            <Instagram class="w-5 h-5" />
           </a>
-          <a :href="'mailto:' + db.contact_infos.email" class="text-on-surface-variant hover:text-primary transition-all">
-            <span class="material-symbols-outlined">alternate_email</span>
+
+          <a :href="'mailto:' + db.contact_infos.email">
+            <Mail class="w-5 h-5" />
           </a>
         </div>
       </div>
       <div>
-        <h4 class="font-label-md text-on-surface mb-6">Menu Navigasi</h4>
+        <h4 class="font-label-md text-on-surface font-bold mb-6">Menu Navigasi</h4>
         <ul class="space-y-4">
           <li><router-link @click="scrollToTop" class="font-body-sm text-on-surface-variant hover:text-primary underline-offset-4 hover:underline transition-all" to="/">Beranda</router-link></li>
           <li><router-link @click="scrollToTop" class="font-body-sm text-on-surface-variant hover:text-primary underline-offset-4 hover:underline transition-all" to="/about">Tentang Kami</router-link></li>
@@ -109,7 +111,7 @@
         </ul>
       </div>
       <div>
-        <h4 class="font-label-md text-on-surface mb-6">Informasi Publik</h4>
+        <h4 class="font-label-md text-on-surface font-bold mb-6">Informasi Publik</h4>
         <ul class="space-y-4">
           <li><router-link @click="scrollToTop" class="font-body-sm text-on-surface-variant hover:text-primary underline-offset-4 hover:underline transition-all" to="/berita">Berita Terkini</router-link></li>
           <li><router-link @click="scrollToTop" class="font-body-sm text-on-surface-variant hover:text-primary underline-offset-4 hover:underline transition-all" to="/berita">Pengumuman</router-link></li>
@@ -117,7 +119,7 @@
         </ul>
       </div>
       <div>
-        <h4 class="font-label-md text-on-surface mb-6">Kontak Kantor</h4>
+        <h4 class="font-label-md text-on-surface font-bold mb-6">Kontak Kantor</h4>
         <p class="font-body-sm text-on-surface-variant mb-2 whitespace-pre-wrap">{{ db.contact_infos.office_address }}</p>
         <p class="font-body-sm text-on-surface-variant mb-4">{{ db.contact_infos.phone }}</p>
       </div>
@@ -131,6 +133,7 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
 import { database } from '@/data/db.js'
+import { Facebook, Instagram, Mail } from 'lucide-vue-next'
 
 const db = ref(database)
 const isMobileMenuOpen = ref(false)

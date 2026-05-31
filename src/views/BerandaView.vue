@@ -9,7 +9,7 @@
       <div class="relative z-20 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto w-full text-white mt-12 md:mt-0 text-center md:text-left">
         <div class="max-w-2xl space-y-4 md:space-y-6 mx-auto md:mx-0">
           <h1 class="font-display-lg font-bold text-4xl sm:text-5xl leading-tight md:text-[64px] md:leading-[1.1]">
-            Website Resmi Desa <span class="text-primary-fixed">{{ db.villages.name }}</span>
+            Website Resmi <br> <span class="text-primary-fixed">{{ db.villages.name }}</span>
           </h1>
           <p class="font-body-lg text-body-md md:text-body-lg text-white/90 max-w-lg mx-auto md:mx-0">
             {{ db.villages.tagline }}
@@ -219,8 +219,8 @@
             <iframe
               :class="[
                 'absolute inset-0 w-full h-full transition-all duration-500',
-                'grayscale-0 opacity-100',
-                'md:grayscale md:opacity-80 group-hover:grayscale-0 group-hover:opacity-100'
+                '',
+                'group-hover:opacity-100'
               ]"
               style="border:0;"
               loading="lazy"
