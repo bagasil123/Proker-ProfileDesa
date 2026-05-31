@@ -7,7 +7,7 @@
           Profil Desa {{ db.villages.name }}
         </h1>
         <p class="font-body-md md:font-body-lg max-w-xl mx-auto md:mx-0 opacity-90">
-           {{ db.villages.tagline }}.
+           {{ db.villages.tagline }}
         </p>
       </div>
     </section>
