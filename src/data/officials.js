@@ -33,7 +33,7 @@ export const village_officials = [
         id: 5,
         name: "Dedi Kurniawan",
         position: "Kaur Umum & TU",
-        photo_path: "https://lh3.googleusercontent.com/aida-public/AB6AXuBjt3hkX32TLZ9vbGbhlgb0jy_x-ybzjI2Q4KYFJosUD6b-7iAE24cr2iVg1kv4AsAjwtO8ITQnb1Rte5VI-lTSyHHHjCkVzVxcpA-XhK--ba4wg3e1iPIuzmUne94O3tEE9TNtqkwHwYuZRhBV0e3MOro8frCxTiiOd8ovTRuMEGewNhUzgJxfrXK19Jzv8NROBusLk5pl2d_3SO3464HFdpLfhRx4T_Lagl6CrAhnNZlhLe6F04g70OmCQ3aAmYvyiRo926Lv6XE",
+        photo_path: "https://lh3.googleusercontent.com/aida-public/AB6AXuD0HzeOPAhtiocvvZkKlshabxmwDYTD3IjOskHYutNeQaLKRdpDmnuw8I6hu1k1pShmkkBI2dEIeFJgpnn7dx8kYNExJ4rp99I88Sb35kstH2yI_kUYkHa33Tmqjfp8exLXVCk9GB9dlqPoI2jKzcgxqFGl-xCqreJIHKdkcPkteFzZt1Gw61euuMUOoLlmi2rvdWVzVg2ymMb7NJa10JWetzdmlndL5E84Z-e1zM-acqy07mgm4TCziIVD5DIzuVHVUNXKCFWR4Dk",
         sort_order: 5
     },
     {
@@ -47,7 +47,7 @@ export const village_officials = [
         id: 7,
         name: "Eko Prasetyo",
         position: "Kasi Pemerintahan",
-        photo_path: "https://lh3.googleusercontent.com/aida-public/AB6AXuAgt6xLD-wV-OZWJbpYpoYQ1F_-1aCr59UOTUKAIWtts0pt52LA7dTVuL95ZA00YbwFgsdBeBBzA1bJr7iNVvNIY5FfPVwwV2tHGyTNm5u0EO4NMFjyjWN97ZTx0soCXwi2fDYwgrtRlBFi4Nb79epl3tMgFfkLkI364P7moI5C2PLCwcG54AKIFGjXyrG-xslIl8gj8Lv_s_f7QyFdJYmXyJCR_E7L4gOqToQCxDPTyz1Fy80QVbJTqHs_n3Sb38F7iNL__T3s288",
+        photo_path: "https://lh3.googleusercontent.com/aida-public/AB6AXuD0HzeOPAhtiocvvZkKlshabxmwDYTD3IjOskHYutNeQaLKRdpDmnuw8I6hu1k1pShmkkBI2dEIeFJgpnn7dx8kYNExJ4rp99I88Sb35kstH2yI_kUYkHa33Tmqjfp8exLXVCk9GB9dlqPoI2jKzcgxqFGl-xCqreJIHKdkcPkteFzZt1Gw61euuMUOoLlmi2rvdWVzVg2ymMb7NJa10JWetzdmlndL5E84Z-e1zM-acqy07mgm4TCziIVD5DIzuVHVUNXKCFWR4Dk",
         sort_order: 7
     },
     {
