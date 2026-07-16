@@ -73,7 +73,7 @@
             </div>
           </section>
 
-          <section class="space-y-4 md:space-y-md" v-if="facility.faqs && facility.faqs.length > 0">
+          <!-- <section class="space-y-4 md:space-y-md" v-if="facility.faqs && facility.faqs.length > 0">
             <h2 class="font-headline-sm font-bold text-on-surface">Pertanyaan Umum (FAQ)</h2>
             <div class="space-y-3">
               <div v-for="(faq, index) in facility.faqs" :key="index" class="bg-surface-container-low rounded-xl p-4 md:p-md border border-outline-variant transition-colors hover:bg-surface-container">
@@ -86,7 +86,7 @@
                 </div>
               </div>
             </div>
-          </section>
+          </section> -->
         </div>
 
         <aside class="lg:col-span-4 space-y-6 md:space-y-md mt-4 lg:mt-0">
@@ -178,10 +178,10 @@ import { database } from '@/data/db.js'
 const route = useRoute()
 const db = ref(database)
 
-const openFaq = ref(0)
-const toggleFaq = (index) => {
-    openFaq.value = openFaq.value === index ? null : index
-}
+// const openFaq = ref(0)
+// const toggleFaq = (index) => {
+//     openFaq.value = openFaq.value === index ? null : index
+// }
 
 const isLightboxOpen = ref(false)
 const selectedImage = ref(null)

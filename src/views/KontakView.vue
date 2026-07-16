@@ -63,9 +63,9 @@
               <div class="space-y-2">
                 <label class="font-label-md text-on-surface-variant font-bold">Perihal</label>
                 <select v-model="formData.subject" class="w-full h-12 px-4 md:px-md rounded-lg border border-outline-variant bg-surface-bright font-body-sm md:font-body-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all appearance-none cursor-pointer">
-                  <option>Layanan Administrasi</option>
-                  <option>Pengaduan Masyarakat</option>
-                  <option>Informasi Desa</option>
+                  <option>Surat Pengantar RT/RW</option>
+                  <option>Pendaftaran Warga Baru</option>
+                  <option>Iuran & Kas Lingkungan</option>
                   <option>Lainnya</option>
                 </select>
               </div>
