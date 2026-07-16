@@ -1,165 +1,413 @@
 export const umkm_categories = [
-    { id: 1, name: "Makanan", style: "bg-tertiary-fixed text-on-tertiary-fixed-variant" },
-    { id: 2, name: "Kerajinan", style: "bg-secondary-fixed text-on-secondary-fixed-variant" },
-    { id: 3, name: "Jasa", style: "bg-secondary-fixed text-on-secondary-fixed-variant" },
-    { id: 4, name: "Pertanian", style: "bg-primary-fixed text-on-primary-fixed-variant" }
+    { id: 1, name: "Perdagangan", style: "bg-tertiary-fixed text-on-tertiary-fixed-variant" },
+    // { id: 2, name: "Kerajinan", style: "bg-secondary-fixed text-on-secondary-fixed-variant" },
+    // { id: 3, name: "Pertanian", style: "bg-secondary-fixed text-on-secondary-fixed-variant" },
+    { id: 4, name: "Peternakan", style: "bg-primary-fixed text-on-primary-fixed-variant" }
 ];
 
 export const umkms = [
     {
         id: 1,
         umkm_category_id: 1,
-        name: "Madu Hutan Lestari",
-        description: "Madu murni asli dari hutan tropis desa, dipanen secara tradisional tanpa bahan pengawet.",
-        product_image_path: "https://lh3.googleusercontent.com/aida-public/AB6AXuDm0Y-A-v137SjVET5jngwQoQHH_Yeihb4qTTAQ_kyPEZ-ImVFt9GMbZh9es45g0rPiF_xBUAUAGJm6ZAHN2JXG-qEpcyvwaKBP9VtLyQiW9pRkJbl7bls6TEnEM-3JBowECvduHa73OE_NOtK17BlnDtxCJXbGNVKvmw2_nqJEZ0e1c-oPJXX1qdhPKN6Rma-itzbUkGUHS3wXAzmClgsBswkMWN0RHybSiyImLdSUwTwKAZ9VGrdpMrtW0krs_i64GFMxBZjfX48",
-        whatsapp: "6281234567890",
+        name: "Warung Bu Ratna",
+        description: "Warung Bu Ratna merupakan usaha toko kelontong yang melayani kebutuhan sehari-hari masyarakat Desa Cianten. Berbagai produk seperti sembako, makanan ringan, minuman, bumbu dapur, kebutuhan rumah tangga, hingga perlengkapan harian tersedia dengan harga yang terjangkau dan pelayanan yang ramah.",
+        product_image_path: "/images/umkm/bu-ratna/1.jpeg",
+        whatsapp: "6281298062510",
         maps_url: "#",
-        maps_embed_url: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.505086873523!2d106.82869187318683!3d-6.1966579607062425!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f43058863f69%3A0x633d98782d41fb30!2sRSUP%20Nasional%20Dr.%20Cipto%20Mangunkusumo!5e0!3m2!1sen!2sid!4v1700000000000!5m2!1sen!2sid",
-        price: "Rp 85.000 - 150.000",
-        owner: "Bapak Agus Salim",
-        address: "Dusun Lestari RT 01/RW 02",
+        maps_embed_url: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1075.561154150287!2d106.60020939400256!3d-6.719477257117651!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69d5ca71e1a3e7%3A0xede3b244212779b4!2sMasjid%20Jami%20An%20Nur%20Kp.%20Pel%20Cianten!5e0!3m2!1sid!2sid!4v1781929019503!5m2!1sid!2sid",
+        price: "",
+        owner: "Bu Ratna",
+        address: "Desa Cianten RW 11",
         hours: "Senin - Minggu (07.00 - 16.00 WIB)",
         detailed_description: {
             paragraphs: [
-                "Madu Hutan Lestari dipanen langsung dari hutan tropis desa kami oleh para petani lebah berpengalaman. Proses pemanenan dilakukan secara tradisional dan lestari tanpa merusak habitat lebah.",
-                "Madu kami 100% murni, tidak melalui proses pemanasan atau penambahan gula buatan, sehingga enzim dan nutrisi alaminya tetap terjaga utuh. Sangat baik untuk menjaga daya tahan tubuh keluarga Anda."
+                "Warung Bu Ratna hadir sebagai salah satu usaha mikro yang mendukung aktivitas ekonomi masyarakat Desa Cianten. Dengan lokasi yang mudah dijangkau, warung ini menyediakan berbagai kebutuhan pokok serta aneka makanan dan minuman untuk memenuhi kebutuhan warga sekitar.",
+                "Selain menjadi tempat berbelanja, warung ini juga menjadi bagian dari aktivitas sosial masyarakat yang telah melayani pelanggan setiap hari."
             ],
             features: [
-                "100% Madu Hutan Asli",
-                "Tanpa Campuran Air & Gula",
-                "Kaya Antioksidan & Enzim Alami",
-                "Tersedia kemasan botol kaca 250ml dan 500ml"
+                "Menyediakan kebutuhan pokok sehari-hari.",
+                "Aneka makanan ringan dan minuman.",
+                "Harga terjangkau.",
+                "Lokasi mudah diakses oleh masyarakat sekitar."
             ]
         }
     },
     {
         id: 2,
-        umkm_category_id: 2,
-        name: "Anyaman Pandan Ibu Sri",
-        description: "Tas anyaman tangan berkualitas tinggi dari serat pandan alami, kuat dan ramah lingkungan.",
-        product_image_path: "https://lh3.googleusercontent.com/aida-public/AB6AXuCeYUPjTir-fgm8iO4Sy9FIbBLpFTyXCx7MACIhof5A8RBZm_k3EMAIxGTI8xASM2Ey2Oamsxj9sATK2miVy46ZQ9FBv_Qjcq3g8CMpIsr0BkXHvBtkWpnELd7fNizucI2aO-fzmoT9S-IZNOps-yMBGXrBkx6uVhz42BGPEhqUtdfyLPWkIguOHLgbCUtI0uBP_r5JWIdVtNdSUMgRlLs5J9Y0mQbMsMAEPjUm3aXWe-GKch7JhI5oi8bGPVZPn068xfq85d9-l38",
-        whatsapp: "6281234567890",
+        umkm_category_id: 1,
+        name: "Eldie Shop",
+        description: "Warung Eldie Shop merupakan usaha toko kelontong yang melayani kebutuhan sehari-hari masyarakat Desa Cianten. Berbagai produk seperti sembako, makanan ringan, minuman, bumbu dapur, kebutuhan rumah tangga, hingga perlengkapan harian tersedia dengan harga yang terjangkau dan pelayanan yang ramah.",
+        product_image_path: "/images/umkm/eldie-shoop/1.jpeg",
+        whatsapp: "6281586850912",
         maps_url: "#",
-        maps_embed_url: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.5414845012586!2d106.8242484731867!3d-6.191830660682223!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f430b8098c11%3A0x296b12f6c94d6e9f!2sBalai%20Kota%20DKI%20Jakarta!5e0!3m2!1sen!2sid!4v1700000000000!5m2!1sen!2sid",
-        price: "Rp 120.000 - 300.000",
-        owner: "Ibu Sri Wahyuni",
-        address: "Dusun Karya RT 03/RW 01",
-        hours: "Senin - Sabtu (08.00 - 15.00 WIB)",
+        maps_embed_url: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1075.561154150287!2d106.60020939400256!3d-6.719477257117651!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69d5ca71e1a3e7%3A0xede3b244212779b4!2sMasjid%20Jami%20An%20Nur%20Kp.%20Pel%20Cianten!5e0!3m2!1sid!2sid!4v1781929019503!5m2!1sid!2sid",
+        price: "",
+        owner: "Eldie Shop",
+        address: "Desa Cianten RW 11",
+        hours: "Senin - Minggu (07.00 - 16.00 WIB)",
         detailed_description: {
             paragraphs: [
-                "Ibu Sri dan kelompok pengerajin lokal menyulap daun pandan menjadi karya seni bernilai tinggi. Setiap produk dianyam dengan tangan (handmade) dengan tingkat ketelitian yang luar biasa.",
-                "Produk kami mencakup tas, dompet, tikar, hingga hiasan dinding. Selain desainnya yang estetis dan klasik, produk ini juga ramah lingkungan dan sangat kuat untuk penggunaan jangka panjang."
+                "Warung Eldie Shop hadir sebagai salah satu usaha mikro yang mendukung aktivitas ekonomi masyarakat Desa Cianten. Dengan lokasi yang mudah dijangkau, warung ini menyediakan berbagai kebutuhan pokok serta aneka makanan dan minuman untuk memenuhi kebutuhan warga sekitar.",
+                "Selain menjadi tempat berbelanja, warung ini juga menjadi bagian dari aktivitas sosial masyarakat yang telah melayani pelanggan setiap hari."
             ],
             features: [
-                "100% Handmade by Local Artisans",
-                "Bahan Serat Pandan Alami",
-                "Ramah Lingkungan & Biodegradable",
-                "Menerima pesanan kustom (Custom Order)"
+                "Menyediakan kebutuhan pokok sehari-hari.",
+                "Aneka makanan ringan dan minuman.",
+                "Harga terjangkau.",
+                "Lokasi mudah diakses oleh masyarakat sekitar."
             ]
         }
     },
     {
         id: 3,
         umkm_category_id: 1,
-        name: "Gula Aren Murni Mandiri",
-        description: "Gula semut dan cetak dari nira aren pilihan, diproses tanpa pemanis buatan.",
-        product_image_path: "https://lh3.googleusercontent.com/aida-public/AB6AXuB-NDHk2yUZEub7n4UOohRdmjPOTfPEJnXzfVSFVz_i5W7tC7WhU0AiU2J9afHE6vNF4KrX072HFN9Um6NR9LFKbaS3cJu5fpQFZ26z1yzPnxGesuyTj3SHxVOEYjzRXd4E2R6usjdRxE06GP9_vF0iHVLLhZPrutJJJhLCibML07U4q4caMArio_6wZrzx1aMXYu_vcAt6SRfNyeRJ7PC6V-KPF3bGD3R3jwxSGYVOHvHjzMLHvzcny07qeq2OoMJZhPoRPhEyF14",
-        whatsapp: "6281234567890",
+        name: "Warung Bapak Sarnan",
+        description: "Warung Bapak Sarnan merupakan usaha toko kelontong yang melayani kebutuhan sehari-hari masyarakat Desa Cianten. Berbagai produk seperti sembako, makanan ringan, minuman, bumbu dapur, kebutuhan rumah tangga, hingga perlengkapan harian tersedia dengan harga yang terjangkau dan pelayanan yang ramah.",
+        product_image_path: "/images/umkm/bapak-sarnan/1.jpeg",
+        whatsapp: "628570659309",
         maps_url: "#",
-        maps_embed_url: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.6664539828236!2d106.8306918731865!3d-6.170560660505221!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f5cc02d0899b%3A0xc304a99b0151c897!2sMasjid%20Istiqlal!5e0!3m2!1sen!2sid!4v1700000000000!5m2!1sen!2sid",
-        price: "Rp 25.000 - 50.000",
-        owner: "Bapak Mandiri",
-        address: "Dusun Makmur RT 04/RW 03",
-        hours: "Setiap Hari (06.00 - 18.00 WIB)",
+        maps_embed_url: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1075.561154150287!2d106.60020939400256!3d-6.719477257117651!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69d5ca71e1a3e7%3A0xede3b244212779b4!2sMasjid%20Jami%20An%20Nur%20Kp.%20Pel%20Cianten!5e0!3m2!1sid!2sid!4v1781929019503!5m2!1sid!2sid",
+        price: "",
+        owner: "Bapak Sarnan",
+        address: "Desa Cianten RW 11",
+        hours: "Senin - Minggu (07.00 - 16.00 WIB)",
         detailed_description: {
             paragraphs: [
-                "Gula Aren Murni Mandiri diproduksi dari nira pohon enau/aren pilihan yang tumbuh subur di pegunungan desa kami. Proses memasaknya menggunakan kayu bakar alami sehingga menghasilkan aroma karamel yang khas.",
-                "Kami menyediakan gula aren dalam bentuk cetak tradisional (batok) maupun gula semut yang praktis. Gula ini sangat cocok sebagai pemanis alami yang lebih sehat untuk kopi, teh, dan aneka kue basah."
+                "Warung Bapak Sarnan hadir sebagai salah satu usaha mikro yang mendukung aktivitas ekonomi masyarakat Desa Cianten. Dengan lokasi yang mudah dijangkau, warung ini menyediakan berbagai kebutuhan pokok serta aneka makanan dan minuman untuk memenuhi kebutuhan warga sekitar.",
+                "Selain menjadi tempat berbelanja, warung ini juga menjadi bagian dari aktivitas sosial masyarakat yang telah melayani pelanggan setiap hari."
             ],
             features: [
-                "100% Nira Aren Murni",
-                "Indeks Glikemik Lebih Rendah",
-                "Diproses Tanpa Pengawet",
-                "Aroma Karamel Alami yang Khas"
+                "Menyediakan kebutuhan pokok sehari-hari.",
+                "Aneka makanan ringan dan minuman.",
+                "Harga terjangkau.",
+                "Lokasi mudah diakses oleh masyarakat sekitar."
             ]
         }
     },
     {
         id: 4,
-        umkm_category_id: 4,
-        name: "Pusat Bibit Padi Unggul",
-        description: "Sedia bibit padi varietas lokal tahan hama dan hasil melimpah untuk petani desa.",
-        product_image_path: "https://lh3.googleusercontent.com/aida-public/AB6AXuBpv5jSnmRGpgfgkVef0hcOFs17YFOHPca6Wm4-6qQmNqO88EmvDFENmhJ7lsKC27ULRlri1bZnVbOAGm2_jb_b0hhBdguYz_8MfCWX8N4y5kYj0kGwbnAlkgC1U0wd0-0JGxZlyNtLS55JKxgemwzykwIb4q7qbyUmuom_1ZRrgN5XWGgBxupw9SScRxZYkebKJtJnYvTAbLKRwh2tD9GQU_5Gq7hn55dDMJKCa9ruBe3NCK4XjsmRA-uwv58jSab2vVjPed8d5kk",
-        whatsapp: "6281234567890",
+        umkm_category_id: 4, // Peternakan
+        name: "Peternakan Kambing",
+        description: "Menyediakan kambing berkualitas untuk kebutuhan kurban, aqiqah, dan ternak.",
+        product_image_path: "/images/umkm/peternakan/1.jpg",
+        whatsapp: "6285659452037",
         maps_url: "#",
-        maps_embed_url: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.529854556488!2d106.8000918731867!3d-6.216397960849204!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f14d30079f01%3A0x2e74f2341fff266d!2sGelora%20Bung%20Karno%20Main%20Stadium!5e0!3m2!1sen!2sid!4v1700000000000!5m2!1sen!2sid",
-        price: "Mulai Rp 60.000 / Karung",
-        owner: "Kelompok Tani Tunas Jaya",
-        address: "Sektor Pertanian Utara",
-        hours: "Senin - Jumat (06.00 - 15.00 WIB)",
+        maps_embed_url: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1075.561154150287!2d106.60020939400256!3d-6.719477257117651!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69d5ca71e1a3e7%3A0xede3b244212779b4!2sMasjid%20Jami%20An%20Nur%20Kp.%20Pel%20Cianten!5e0!3m2!1sid!2sid!4v1781929019503!5m2!1sid!2sid",
+        price: "",
+        owner: "Bapak Udi Suhendi",
+        address: "Kampung Cianten RW 11, Kecamatan Leuwiliang",
+        hours: "Senin - Minggu (07.00 - 17.00 WIB)",
+
         detailed_description: {
             paragraphs: [
-                "Pusat Bibit Padi Unggul kami dikelola oleh kelompok tani desa yang berdedikasi tinggi. Kami menyilangkan varietas padi lokal dengan bibit unggul bersertifikat untuk menghasilkan tanaman padi yang tahan hama dan cuaca.",
-                "Setiap benih yang kami jual telah melalui proses seleksi ketat dan pengujian daya kecambah. Kami juga memberikan pendampingan gratis mengenai cara tanam dan pemupukan organik bagi pembeli lokal."
+                "Peternakan Kambing merupakan salah satu usaha peternakan lokal di Kampung Cianten RW 11 yang menyediakan kambing sehat dan berkualitas. Kambing dipelihara dengan pakan alami serta perawatan yang rutin sehingga menghasilkan ternak yang sehat dan layak konsumsi.",
+                "Selain melayani penjualan kambing untuk kebutuhan sehari-hari, peternakan ini juga menerima pemesanan kambing untuk acara aqiqah, kurban Idul Adha, maupun kebutuhan usaha. Pelanggan dapat memilih langsung kambing sesuai ukuran dan kebutuhan."
             ],
+
             features: [
-                "Benih Bersertifikat Unggul",
-                "Tahan Hama & Penyakit (Wereng)",
-                "Daya Kecambah Tinggi (>90%)",
-                "Masa Panen Lebih Cepat"
+                "Kambing Sehat dan Terawat",
+                "Melayani Pemesanan Kurban & Aqiqah",
+                "Pilihan Berbagai Ukuran dan Bobot",
+                "Dapat Melihat dan Memilih Kambing Secara Langsung"
             ]
-        }
+        },
+        video_url: "/images/umkm/peternakan/video.mp4",
+        gallery: [
+            { src: "/images/umkm/peternakan/4.jpeg", alt: "Peternakan" },
+            { src: "/images/umkm/peternakan/3.jpg", alt: "Peternakan" },
+            { src: "/images/umkm/peternakan/2.jpg", alt: "Peternakan" },
+            { src: "/images/umkm/peternakan/5.jpeg", alt: "Peternakan" },
+            { src: "/images/umkm/peternakan/6.jpeg", alt: "Peternakan" },
+            { src: "/images/umkm/peternakan/7.jpeg", alt: "Peternakan" },
+            { src: "/images/umkm/peternakan/8.jpeg", alt: "Peternakan" },
+            { src: "/images/umkm/peternakan/9.jpeg", alt: "Peternakan" },
+            { src: "/images/umkm/peternakan/10.jpeg", alt: "Peternakan" }
+        ]
     },
     {
         id: 5,
-        umkm_category_id: 3,
-        name: "Bengkel Motor Barokah",
-        description: "Servis mesin, ganti oli, dan perbaikan kendaraan bermotor dengan mekanik berpengalaman.",
-        product_image_path: "https://lh3.googleusercontent.com/aida-public/AB6AXuDiWtaT1AMNB_911dfrAJjz8YLoWuc1spvksLdM-o27VHACJpK0sosXS069NAaeyn6AWH6P0UNsgEKLUa3nl2ALGE_DX7Wm_GuoNp7k-6sqFon6r62WOS1byqZsG6pnN5Qa7Ga5mQF7-QtMlyt2QnLj9dueQjdh2rkKdUati3SQYJMsPettp2Ik37G9fBhSqWy9q3xvo7gWj_z55ZYL-AS9-Q3tMV0hab0LofO8HqeIeysosvNJ_3eMRxtK-YLi7a5ojWWdlM3gxoc",
-        whatsapp: "6281234567890",
+        umkm_category_id: 1,
+        name: "Warung Oemah Enden",
+        description: "Warung Oemah Enden merupakan usaha toko kelontong yang melayani kebutuhan sehari-hari masyarakat Desa Cianten. Berbagai produk seperti sembako, makanan ringan, minuman, bumbu dapur, kebutuhan rumah tangga, hingga perlengkapan harian tersedia dengan harga yang terjangkau dan pelayanan yang ramah.",
+        product_image_path: "/images/umkm/omah-enden/1.jpeg",
+        whatsapp: "6285778665102",
         maps_url: "#",
-        maps_embed_url: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.309062323069!2d106.82424847318712!3d-6.222912460946222!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f3e5c94d0e9b%3A0xcb1b5907ed0e4710!2sSDN%20Menteng%2001!5e0!3m2!1sen!2sid!4v1700000000000!5m2!1sen!2sid",
-        price: "Harga Jasa Kompetitif",
-        owner: "Bapak Joko Barokah",
-        address: "Jl. Lintas Utama Desa No. 12",
-        hours: "Setiap Hari (08.00 - 20.00 WIB)",
+        maps_embed_url: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1075.561154150287!2d106.60020939400256!3d-6.719477257117651!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69d5ca71e1a3e7%3A0xede3b244212779b4!2sMasjid%20Jami%20An%20Nur%20Kp.%20Pel%20Cianten!5e0!3m2!1sid!2sid!4v1781929019503!5m2!1sid!2sid",
+        price: "",
+        owner: "Oemah Enden",
+        address: "Desa Cianten RW 11",
+        hours: "Senin - Minggu (07.00 - 16.00 WIB)",
         detailed_description: {
             paragraphs: [
-                "Bengkel Motor Barokah adalah solusi terpercaya untuk kendaraan roda dua Anda. Berpengalaman lebih dari 10 tahun, mekanik kami menangani segala jenis merk motor bebek, matic, hingga sport.",
-                "Kami menyediakan layanan ganti oli, servis karburator/injeksi, perbaikan mesin (turun mesin), ganti ban, dan modifikasi ringan. Kami juga menyediakan sparepart asli maupun alternatif dengan harga jujur."
+                "Warung Oemah Enden hadir sebagai salah satu usaha mikro yang mendukung aktivitas ekonomi masyarakat Desa Cianten. Dengan lokasi yang mudah dijangkau, warung ini menyediakan berbagai kebutuhan pokok serta aneka makanan dan minuman untuk memenuhi kebutuhan warga sekitar.",
+                "Selain menjadi tempat berbelanja, warung ini juga menjadi bagian dari aktivitas sosial masyarakat yang telah melayani pelanggan setiap hari."
             ],
             features: [
-                "Mekanik Berpengalaman & Jujur",
-                "Menyediakan Sparepart Original",
-                "Melayani Panggilan Darurat di Area Desa",
-                "Ruang Tunggu Nyaman dengan Free WiFi"
+                "Menyediakan kebutuhan pokok sehari-hari.",
+                "Aneka makanan ringan dan minuman.",
+                "Harga terjangkau.",
+                "Lokasi mudah diakses oleh masyarakat sekitar."
             ]
         }
     },
     {
         id: 6,
         umkm_category_id: 1,
-        name: "Warung Makan Selera Desa",
-        description: "Masakan khas desa siap saji, prasmanan harian, dan melayani pesanan nasi kotak.",
-        product_image_path: "https://lh3.googleusercontent.com/aida-public/AB6AXuDTFTOfE3YKN3pDxvmZNTCXBaLTDy7UF5bJsvvipwMcJZgXwpBSfM7KM38C1SSat8tZqYox9qPiNGZxXUwLw1Oj7kUf-FqUwkqwbQPM7fHBI7sZcfzR-cMMJNXszeCRtw-IvMnQ2r17CTjiJKo9j4N1xJz__Wx_RmoIL0LqPHmMJ8YswUo9SCeTJFvtwLUhhRukfZYYs4pZJHIXzBB632ODTq852e9Jw-6yHHi7R5blaFvDyt3avMWxY5QSJV3oYhUKsxkvj53UcZs",
-        whatsapp: "6281234567890",
+        name: "Warung Bu Mir",
+        description: "Warung Bu Mir merupakan usaha toko kelontong yang melayani kebutuhan sehari-hari masyarakat Desa Cianten. Berbagai produk seperti sembako, makanan ringan, minuman, bumbu dapur, kebutuhan rumah tangga, hingga perlengkapan harian tersedia dengan harga yang terjangkau dan pelayanan yang ramah.",
+        product_image_path: "/images/umkm/bu-mir/1.jpeg",
+        whatsapp: "6285773114842",
         maps_url: "#",
-        maps_embed_url: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.505086873523!2d106.82869187318683!3d-6.1966579607062425!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f43058863f69%3A0x633d98782d41fb30!2sRSUP%20Nasional%20Dr.%20Cipto%20Mangunkusumo!5e0!3m2!1sen!2sid!4v1700000000000!5m2!1sen!2sid",
-        price: "Mulai Rp 15.000 / Porsi",
-        owner: "Ibu Fatimah",
-        address: "Simpang Tiga Alun-Alun Desa",
-        hours: "Setiap Hari (06.00 - 21.00 WIB)",
+        maps_embed_url: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1075.561154150287!2d106.60020939400256!3d-6.719477257117651!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69d5ca71e1a3e7%3A0xede3b244212779b4!2sMasjid%20Jami%20An%20Nur%20Kp.%20Pel%20Cianten!5e0!3m2!1sid!2sid!4v1781929019503!5m2!1sid!2sid",
+        price: "",
+        owner: "Bu Mir",
+        address: "Desa Cianten RW 11",
+        hours: "Senin - Minggu (07.00 - 16.00 WIB)",
         detailed_description: {
             paragraphs: [
-                "Warung Makan Selera Desa menyajikan aneka masakan khas Nusantara dengan cita rasa rumahan yang otentik. Bumbu rempah yang kami gunakan diracik sendiri dengan bahan-bahan segar dari pasar lokal.",
-                "Menu andalan kami antara lain Ayam Penyet Sambal Ijo, Nasi Pecel Madiun, Sayur Lodeh, dan aneka pepes ikan. Kami juga melayani pesanan katering untuk acara rapat desa, arisan, syukuran, dan pernikahan."
+                "Warung Bu Mir hadir sebagai salah satu usaha mikro yang mendukung aktivitas ekonomi masyarakat Desa Cianten. Dengan lokasi yang mudah dijangkau, warung ini menyediakan berbagai kebutuhan pokok serta aneka makanan dan minuman untuk memenuhi kebutuhan warga sekitar.",
+                "Selain menjadi tempat berbelanja, warung ini juga menjadi bagian dari aktivitas sosial masyarakat yang telah melayani pelanggan setiap hari."
             ],
             features: [
-                "Menu Beragam Setiap Hari (Prasmanan)",
-                "Bahan Baku Segar & Halal 100%",
-                "Menerima Pesanan Nasi Kotak (Katering)",
-                "Harga Terjangkau Khas Pedesaan"
+                "Menyediakan kebutuhan pokok sehari-hari.",
+                "Aneka makanan ringan dan minuman.",
+                "Harga terjangkau.",
+                "Lokasi mudah diakses oleh masyarakat sekitar."
             ]
         }
-    }
+    },
+    {
+        id: 7,
+        umkm_category_id: 1,
+        name: "Warung Bu Milah",
+        description: "Warung Bu Milah merupakan usaha toko kelontong yang melayani kebutuhan sehari-hari masyarakat Desa Cianten. Berbagai produk seperti sembako, makanan ringan, minuman, bumbu dapur, kebutuhan rumah tangga, hingga perlengkapan harian tersedia dengan harga yang terjangkau dan pelayanan yang ramah.",
+        product_image_path: "/images/umkm/bu-milah/1.JPG",
+        whatsapp: "6285773114842",
+        maps_url: "#",
+        maps_embed_url: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1075.561154150287!2d106.60020939400256!3d-6.719477257117651!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69d5ca71e1a3e7%3A0xede3b244212779b4!2sMasjid%20Jami%20An%20Nur%20Kp.%20Pel%20Cianten!5e0!3m2!1sid!2sid!4v1781929019503!5m2!1sid!2sid",
+        price: "",
+        owner: "Bu Milah",
+        address: "Desa Cianten RW 11",
+        hours: "Senin - Minggu (07.00 - 16.00 WIB)",
+        detailed_description: {
+            paragraphs: [
+                "Warung Bu Milah hadir sebagai salah satu usaha mikro yang mendukung aktivitas ekonomi masyarakat Desa Cianten. Dengan lokasi yang mudah dijangkau, warung ini menyediakan berbagai kebutuhan pokok serta aneka makanan dan minuman untuk memenuhi kebutuhan warga sekitar.",
+                "Selain menjadi tempat berbelanja, warung ini juga menjadi bagian dari aktivitas sosial masyarakat yang telah melayani pelanggan setiap hari."
+            ],
+            features: [
+                "Menyediakan kebutuhan pokok sehari-hari.",
+                "Aneka makanan ringan dan minuman.",
+                "Harga terjangkau.",
+                "Lokasi mudah diakses oleh masyarakat sekitar."
+            ]
+        }
+    },
+    {
+        id: 8,
+        umkm_category_id: 1,
+        name: "Warung Bu Ros",
+        description: "Warung Bu Ros merupakan usaha toko kelontong yang melayani kebutuhan sehari-hari masyarakat Desa Cianten. Berbagai produk seperti sembako, makanan ringan, minuman, bumbu dapur, kebutuhan rumah tangga, hingga perlengkapan harian tersedia dengan harga yang terjangkau dan pelayanan yang ramah.",
+        product_image_path: "/images/umkm/bu-ros/1.JPG",
+        whatsapp: "6285773114842",
+        maps_url: "#",
+        maps_embed_url: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1075.561154150287!2d106.60020939400256!3d-6.719477257117651!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69d5ca71e1a3e7%3A0xede3b244212779b4!2sMasjid%20Jami%20An%20Nur%20Kp.%20Pel%20Cianten!5e0!3m2!1sid!2sid!4v1781929019503!5m2!1sid!2sid",
+        price: "",
+        owner: "Bu Ros",
+        address: "Desa Cianten RW 11",
+        hours: "Senin - Minggu (07.00 - 16.00 WIB)",
+        detailed_description: {
+            paragraphs: [
+                "Warung Bu Ros hadir sebagai salah satu usaha mikro yang mendukung aktivitas ekonomi masyarakat Desa Cianten. Dengan lokasi yang mudah dijangkau, warung ini menyediakan berbagai kebutuhan pokok serta aneka makanan dan minuman untuk memenuhi kebutuhan warga sekitar.",
+                "Selain menjadi tempat berbelanja, warung ini juga menjadi bagian dari aktivitas sosial masyarakat yang telah melayani pelanggan setiap hari."
+            ],
+            features: [
+                "Menyediakan kebutuhan pokok sehari-hari.",
+                "Aneka makanan ringan dan minuman.",
+                "Harga terjangkau.",
+                "Lokasi mudah diakses oleh masyarakat sekitar."
+            ]
+        }
+    },
+    {
+        id: 9,
+        umkm_category_id: 1,
+        name: "Warung Bu Hafidz Hanif",
+        description: "Warung Bu Hafidz Hanif merupakan usaha toko kelontong yang melayani kebutuhan sehari-hari masyarakat Desa Cianten. Berbagai produk seperti sembako, makanan ringan, minuman, bumbu dapur, kebutuhan rumah tangga, hingga perlengkapan harian tersedia dengan harga yang terjangkau dan pelayanan yang ramah.",
+        product_image_path: "/images/umkm/bu-hafidz-hanif/1.JPG",
+        whatsapp: "6285773114842",
+        maps_url: "#",
+        maps_embed_url: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1075.561154150287!2d106.60020939400256!3d-6.719477257117651!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69d5ca71e1a3e7%3A0xede3b244212779b4!2sMasjid%20Jami%20An%20Nur%20Kp.%20Pel%20Cianten!5e0!3m2!1sid!2sid!4v1781929019503!5m2!1sid!2sid",
+        price: "",
+        owner: "Bu Hafidz Hanif",
+        address: "Desa Cianten RW 11",
+        hours: "Senin - Minggu (07.00 - 16.00 WIB)",
+        detailed_description: {
+            paragraphs: [
+                "Warung Bu Hafidz Hanif hadir sebagai salah satu usaha mikro yang mendukung aktivitas ekonomi masyarakat Desa Cianten. Dengan lokasi yang mudah dijangkau, warung ini menyediakan berbagai kebutuhan pokok serta aneka makanan dan minuman untuk memenuhi kebutuhan warga sekitar.",
+                "Selain menjadi tempat berbelanja, warung ini juga menjadi bagian dari aktivitas sosial masyarakat yang telah melayani pelanggan setiap hari."
+            ],
+            features: [
+                "Menyediakan kebutuhan pokok sehari-hari.",
+                "Aneka makanan ringan dan minuman.",
+                "Harga terjangkau.",
+                "Lokasi mudah diakses oleh masyarakat sekitar."
+            ]
+        }
+    },
+    {
+        id: 10,
+        umkm_category_id: 1,
+        name: "Warung Bu Titin",
+        description: "Warung Bu Titin merupakan usaha toko kelontong yang melayani kebutuhan sehari-hari masyarakat Desa Cianten. Berbagai produk seperti sembako, makanan ringan, minuman, bumbu dapur, kebutuhan rumah tangga, hingga perlengkapan harian tersedia dengan harga yang terjangkau dan pelayanan yang ramah.",
+        product_image_path: "/images/umkm/bu-titin/1.jpeg",
+        whatsapp: "6285863439303",
+        maps_url: "#",
+        maps_embed_url: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1075.561154150287!2d106.60020939400256!3d-6.719477257117651!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69d5ca71e1a3e7%3A0xede3b244212779b4!2sMasjid%20Jami%20An%20Nur%20Kp.%20Pel%20Cianten!5e0!3m2!1sid!2sid!4v1781929019503!5m2!1sid!2sid",
+        price: "",
+        owner: "Bu Titin",
+        address: "Desa Cianten RW 11",
+        hours: "Senin - Minggu (07.00 - 16.00 WIB)",
+        detailed_description: {
+            paragraphs: [
+                "Warung Bu Titin hadir sebagai salah satu usaha mikro yang mendukung aktivitas ekonomi masyarakat Desa Cianten. Dengan lokasi yang mudah dijangkau, warung ini menyediakan berbagai kebutuhan pokok serta aneka makanan dan minuman untuk memenuhi kebutuhan warga sekitar.",
+                "Selain menjadi tempat berbelanja, warung ini juga menjadi bagian dari aktivitas sosial masyarakat yang telah melayani pelanggan setiap hari."
+            ],
+            features: [
+                "Menyediakan kebutuhan pokok sehari-hari.",
+                "Aneka makanan ringan dan minuman.",
+                "Harga terjangkau.",
+                "Lokasi mudah diakses oleh masyarakat sekitar."
+            ]
+        }
+    },
+    {
+        id: 11,
+        umkm_category_id: 1,
+        name: "Warung Bu Uti",
+        description: "Warung Bu Uti merupakan usaha toko kelontong yang melayani kebutuhan sehari-hari masyarakat Desa Cianten. Berbagai produk seperti sembako, makanan ringan, minuman, bumbu dapur, kebutuhan rumah tangga, hingga perlengkapan harian tersedia dengan harga yang terjangkau dan pelayanan yang ramah.",
+        product_image_path: "/images/umkm/bu-uti/1.jpeg",
+        whatsapp: "-",
+        maps_url: "#",
+        maps_embed_url: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1075.561154150287!2d106.60020939400256!3d-6.719477257117651!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69d5ca71e1a3e7%3A0xede3b244212779b4!2sMasjid%20Jami%20An%20Nur%20Kp.%20Pel%20Cianten!5e0!3m2!1sid!2sid!4v1781929019503!5m2!1sid!2sid",
+        price: "",
+        owner: "Bu Uti",
+        address: "Desa Cianten RW 11",
+        hours: "Senin - Minggu (07.00 - 16.00 WIB)",
+        detailed_description: {
+            paragraphs: [
+                "Warung Bu Uti hadir sebagai salah satu usaha mikro yang mendukung aktivitas ekonomi masyarakat Desa Cianten. Dengan lokasi yang mudah dijangkau, warung ini menyediakan berbagai kebutuhan pokok serta aneka makanan dan minuman untuk memenuhi kebutuhan warga sekitar.",
+                "Selain menjadi tempat berbelanja, warung ini juga menjadi bagian dari aktivitas sosial masyarakat yang telah melayani pelanggan setiap hari."
+            ],
+            features: [
+                "Menyediakan kebutuhan pokok sehari-hari.",
+                "Aneka makanan ringan dan minuman.",
+                "Harga terjangkau.",
+                "Lokasi mudah diakses oleh masyarakat sekitar."
+            ]
+        }
+    },
+    {
+        id: 12,
+        umkm_category_id: 1,
+        name: "Warung Bu Anita",
+        description: "Warung Bu Anita merupakan usaha toko kelontong yang melayani kebutuhan sehari-hari masyarakat Desa Cianten. Berbagai produk seperti sembako, makanan ringan, minuman, bumbu dapur, kebutuhan rumah tangga, hingga perlengkapan harian tersedia dengan harga yang terjangkau dan pelayanan yang ramah.",
+        product_image_path: "/images/umkm/bu-anita/1.jpeg",
+        whatsapp: "6285881985752",
+        maps_url: "#",
+        maps_embed_url: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1075.561154150287!2d106.60020939400256!3d-6.719477257117651!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69d5ca71e1a3e7%3A0xede3b244212779b4!2sMasjid%20Jami%20An%20Nur%20Kp.%20Pel%20Cianten!5e0!3m2!1sid!2sid!4v1781929019503!5m2!1sid!2sid",
+        price: "",
+        owner: "Bu Anita",
+        address: "Desa Cianten RW 11",
+        hours: "Senin - Minggu (07.00 - 16.00 WIB)",
+        detailed_description: {
+            paragraphs: [
+                "Warung Bu Anita hadir sebagai salah satu usaha mikro yang mendukung aktivitas ekonomi masyarakat Desa Cianten. Dengan lokasi yang mudah dijangkau, warung ini menyediakan berbagai kebutuhan pokok serta aneka makanan dan minuman untuk memenuhi kebutuhan warga sekitar.",
+                "Selain menjadi tempat berbelanja, warung ini juga menjadi bagian dari aktivitas sosial masyarakat yang telah melayani pelanggan setiap hari."
+            ],
+            features: [
+                "Menyediakan kebutuhan pokok sehari-hari.",
+                "Aneka makanan ringan dan minuman.",
+                "Harga terjangkau.",
+                "Lokasi mudah diakses oleh masyarakat sekitar."
+            ]
+        }
+    },
+    {
+        id: 13,
+        umkm_category_id: 1,
+        name: "Warung Teh Rnha",
+        description: "Warung Teh Rnha merupakan usaha toko kelontong yang melayani kebutuhan sehari-hari masyarakat Desa Cianten. Berbagai produk seperti sembako, makanan ringan, minuman, bumbu dapur, kebutuhan rumah tangga, hingga perlengkapan harian tersedia dengan harga yang terjangkau dan pelayanan yang ramah.",
+        product_image_path: "/images/umkm/bu-rnha/1.JPG",
+        whatsapp: "6281318045856",
+        maps_url: "#",
+        maps_embed_url: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1075.561154150287!2d106.60020939400256!3d-6.719477257117651!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69d5ca71e1a3e7%3A0xede3b244212779b4!2sMasjid%20Jami%20An%20Nur%20Kp.%20Pel%20Cianten!5e0!3m2!1sid!2sid!4v1781929019503!5m2!1sid!2sid",
+        price: "",
+        owner: "Teh Rnha",
+        address: "Desa Cianten RW 11",
+        hours: "Senin - Minggu (09.00 - 21.00 WIB)",
+        detailed_description: {
+            paragraphs: [
+                "Warung Teh Rnha hadir sebagai salah satu usaha mikro yang mendukung aktivitas ekonomi masyarakat Desa Cianten. Dengan lokasi yang mudah dijangkau, warung ini menyediakan berbagai kebutuhan pokok serta aneka makanan dan minuman untuk memenuhi kebutuhan warga sekitar.",
+                "Selain menjadi tempat berbelanja, warung ini juga menjadi bagian dari aktivitas sosial masyarakat yang telah melayani pelanggan setiap hari."
+            ],
+            features: [
+                "Menyediakan kebutuhan pokok sehari-hari.",
+                "Aneka makanan ringan dan minuman.",
+                "Harga terjangkau.",
+                "Lokasi mudah diakses oleh masyarakat sekitar."
+            ]
+        }
+    },
+    {
+        id: 14,
+        umkm_category_id: 1,
+        name: "Warung Bu Nyayeni",
+        description: "Warung Bu Nyayeni merupakan usaha toko kelontong yang melayani kebutuhan sehari-hari masyarakat Desa Cianten. Berbagai produk seperti sembako, makanan ringan, minuman, bumbu dapur, kebutuhan rumah tangga, hingga perlengkapan harian tersedia dengan harga yang terjangkau dan pelayanan yang ramah.",
+        product_image_path: "/images/umkm/bu-nyayeni/1.JPG",
+        whatsapp: "628211248072",
+        maps_url: "#",
+        maps_embed_url: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1075.561154150287!2d106.60020939400256!3d-6.719477257117651!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69d5ca71e1a3e7%3A0xede3b244212779b4!2sMasjid%20Jami%20An%20Nur%20Kp.%20Pel%20Cianten!5e0!3m2!1sid!2sid!4v1781929019503!5m2!1sid!2sid",
+        price: "",
+        owner: "Bu Nyayeni",
+        address: "Desa Cianten RW 11",
+        hours: "Senin - Minggu (07.00 - 16.00 WIB)",
+        detailed_description: {
+            paragraphs: [
+                "Warung Bu Nyayeni hadir sebagai salah satu usaha mikro yang mendukung aktivitas ekonomi masyarakat Desa Cianten. Dengan lokasi yang mudah dijangkau, warung ini menyediakan berbagai kebutuhan pokok serta aneka makanan dan minuman untuk memenuhi kebutuhan warga sekitar.",
+                "Selain menjadi tempat berbelanja, warung ini juga menjadi bagian dari aktivitas sosial masyarakat yang telah melayani pelanggan setiap hari."
+            ],
+            features: [
+                "Menyediakan kebutuhan pokok sehari-hari.",
+                "Aneka makanan ringan dan minuman.",
+                "Harga terjangkau.",
+                "Lokasi mudah diakses oleh masyarakat sekitar."
+            ]
+        }
+    },
+    {
+        id: 15,
+        umkm_category_id: 1,
+        name: "Warung Mama Misya",
+        description: "Warung Mama Misya merupakan usaha toko kelontong yang melayani kebutuhan sehari-hari masyarakat Desa Cianten. Berbagai produk seperti sembako, makanan ringan, minuman, bumbu dapur, kebutuhan rumah tangga, hingga perlengkapan harian tersedia dengan harga yang terjangkau dan pelayanan yang ramah.",
+        product_image_path: "/images/umkm/mama-misya/1.JPG",
+        whatsapp: "628211248072",
+        maps_url: "#",
+        maps_embed_url: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1075.561154150287!2d106.60020939400256!3d-6.719477257117651!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69d5ca71e1a3e7%3A0xede3b244212779b4!2sMasjid%20Jami%20An%20Nur%20Kp.%20Pel%20Cianten!5e0!3m2!1sid!2sid!4v1781929019503!5m2!1sid!2sid",
+        price: "",
+        owner: "Mama Misya",
+        address: "Desa Cianten RW 11",
+        hours: "Senin - Minggu (07.00 - 16.00 WIB)",
+        detailed_description: {
+            paragraphs: [
+                "Warung Mama Misya hadir sebagai salah satu usaha mikro yang mendukung aktivitas ekonomi masyarakat Desa Cianten. Dengan lokasi yang mudah dijangkau, warung ini menyediakan berbagai kebutuhan pokok serta aneka makanan dan minuman untuk memenuhi kebutuhan warga sekitar.",
+                "Selain menjadi tempat berbelanja, warung ini juga menjadi bagian dari aktivitas sosial masyarakat yang telah melayani pelanggan setiap hari."
+            ],
+            features: [
+                "Menyediakan kebutuhan pokok sehari-hari.",
+                "Aneka makanan ringan dan minuman.",
+                "Harga terjangkau.",
+                "Lokasi mudah diakses oleh masyarakat sekitar."
+            ]
+        }
+    },
 ];

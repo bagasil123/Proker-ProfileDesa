@@ -79,7 +79,7 @@
     <section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
 
       <!-- 3. FEATURED NEWS (Berita Utama) -->
-      <div v-if="featuredNews && activeCategory === 'Semua' && !searchQuery" class="group relative overflow-hidden rounded-xl bg-white border border-outline-variant mb-8 md:mb-lg shadow-sm hover:shadow-md transition-shadow">
+      <!-- <div v-if="featuredNews && activeCategory === 'Semua' && !searchQuery" class="group relative overflow-hidden rounded-xl bg-white border border-outline-variant mb-8 md:mb-lg shadow-sm hover:shadow-md transition-shadow">
         <div class="grid grid-cols-1 md:grid-cols-2">
           <router-link :to="`/berita/${featuredNews.id}`" class="relative h-56 sm:h-64 md:h-[400px] block cursor-pointer">
             <img :alt="featuredNews.title" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" :src="featuredNews.cover_image_path"/>
@@ -106,7 +106,7 @@
             </router-link>
           </div>
         </div>
-      </div>
+      </div> -->
 
       <!-- 4. REGULAR NEWS GRID -->
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-gutter">
@@ -224,12 +224,13 @@ const sortedNews = computed(() => {
   return [...db.value.news_posts].sort((a, b) => new Date(b.published_at) - new Date(a.published_at))
 })
 
-const featuredNews = computed(() => {
-  return sortedNews.value[0]
-})
+// const featuredNews = computed(() => {
+//   return sortedNews.value[0]
+// })
 
 const filteredNews = computed(() => {
-  let result = sortedNews.value.slice(1)
+  // Hapus .slice(1) agar semua berita ditampilkan
+  let result = sortedNews.value
 
   if (activeCategory.value !== 'Semua') {
     result = result.filter(news => news.category === activeCategory.value)

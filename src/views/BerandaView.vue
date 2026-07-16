@@ -84,7 +84,6 @@
             <div class="w-full md:w-2/3 space-y-4 md:space-y-md text-center md:text-left">
               <h2 class="font-headline-md md:font-headline-lg font-bold text-on-surface">Sambutan {{ kepalaDesa.position }}</h2>
               <blockquote class="font-body-md md:font-body-lg italic text-on-surface-variant relative">
-                <span class="hidden md:block material-symbols-outlined text-primary/20 text-6xl absolute -top-8 -left-4 select-none">format_quote</span>
                 "{{ kepalaDesa.description }}"
               </blockquote>
               <div class="pt-4 md:pt-base border-t border-outline-variant flex flex-col md:flex-row items-center md:justify-between gap-4">
@@ -92,9 +91,9 @@
                   <p class="font-headline-sm font-bold text-on-surface">{{ kepalaDesa.name }}</p>
                   <p class="font-label-md text-primary">{{ kepalaDesa.position }} {{ db.villages.name }}</p>
                 </div>
-                <div class="opacity-70 grayscale contrast-150">
+                <!-- <div class="opacity-70 grayscale contrast-150">
                   <img alt="Tanda Tangan Digital" class="h-12 md:h-16 object-contain" :src="kepalaDesa.signature_path">
-                </div>
+                </div> -->
               </div>
             </div>
           </div>
@@ -195,7 +194,7 @@
               <div class="flex items-start gap-4 p-3 md:p-4 rounded-xl hover:bg-surface-container transition-colors">
                 <span class="material-symbols-outlined text-primary p-2 bg-primary/10 rounded-lg">location_on</span>
                 <div>
-                  <h3 class="font-label-md font-bold text-on-surface">Alamat Kantor Desa</h3>
+                  <h3 class="font-label-md font-bold text-on-surface">Alamat Kampung Cianten RW 11</h3>
                   <p class="font-body-sm text-on-surface-variant">{{ db.contact_infos.office_address }}</p>
                 </div>
               </div>
@@ -246,7 +245,7 @@ const scrollToSection = (id) => {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
 }
 const kepalaDesa = computed(() => {
-    return db.value.village_officials.find(o => o.sort_order === 1)
+    return db.value.village_officials.find(o => o.sort_order === 2)
 })
 
 const featuredUmkms = computed(() => {
